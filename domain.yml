@@ -1,0 +1,93 @@
+version: "3.1"
+
+intents:
+  - chao_hoi
+  - nhap_ten
+  - hoi_nganh_tuyen_sinh
+  - hoi_thong_tin_gioi_thieu_chung_cua_nganh
+  - hoi_co_hoi_viec_lam_cua_nganh
+  - hoi_diem_chuan_cua_nganh
+  - hoi_khoi_tuyen_sinh_cua_nganh
+  - hoi_chuong_trinh_dao_tao_cua_truong
+  - hoi_hoc_phi
+  - hoi_dia_diem_hoc
+  - hoi_phuong_thuc_xet_tuyen
+  - hoi_co_so_vat_chat
+  - cam_on
+  - tam_biet
+
+entities:
+  - ten_nguoi_dung
+  - ten_nganh
+  - nam
+
+slots:
+  ten_nguoi_dung:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: ten_nguoi_dung
+  
+  ten_nganh:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: ten_nganh
+  
+  nam:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: nam
+
+responses:
+  utter_chao_hoi:
+    - text: "Xin chào! Tôi là chatbot tư vấn của trường Đại học Giao thông Vận tải TP.HCM. Tôi có thể giúp gì cho bạn?"
+    - text: "Chào bạn! Rất vui được gặp bạn. Tôi là chatbot tư vấn tuyển sinh của UTH. Bạn cần tìm hiểu thông tin gì về trường?"
+
+  utter_hoi_ten:
+    - text: "Bạn có thể cho tôi biết tên của bạn được không?"
+
+  utter_chao_sau_khi_biet_ten:
+    - text: "Rất vui được gặp bạn, {ten_nguoi_dung}! Tôi có thể giúp gì cho bạn?"
+
+  utter_tra_loi_chuong_trinh_dao_tao:
+    - text: "Trường Đại học Giao thông Vận tải TP.HCM có chương trình đào tạo đa dạng với thời gian học 4-5 năm tùy ngành. Chúng tôi cũng có các chương trình liên kết quốc tế và đào tạo tiếng Anh chuyên ngành."
+
+  utter_tra_loi_hoc_phi:
+    - text: "Học phí của trường dao động từ 17-20 triệu đồng/năm học tùy theo ngành học. Trường cũng có nhiều chính sách học bổng và hỗ trợ tài chính cho sinh viên."
+
+  utter_tra_loi_dia_diem_hoc:
+    - text: "Trường có 2 cơ sở chính:\n- Cơ sở 1: Số 2 Võ Oanh, phường 25, quận Bình Thạnh, TP.HCM\n- Cơ sở 2: Số 450-451 Lê Văn Việt, phường Tăng Nhơn Phú A, TP. Thủ Đức, TP.HCM\nSinh viên năm nhất thường học tại cơ sở 2."
+
+  utter_tra_loi_phuong_thuc_xet_tuyen:
+    - text: "Trường có nhiều phương thức xét tuyển như:\n- Xét tuyển theo điểm thi THPT\n- Xét tuyển học bạ THPT\n- Xét tuyển thẳng (đối với học sinh giỏi, đạt giải olimpic)\n- Xét tuyển kết quả đánh giá năng lực của ĐHQG TP.HCM"
+
+  utter_tra_loi_co_so_vat_chat:
+    - text: "Trường có cơ sở vật chất hiện đại với đầy đủ phòng thí nghiệm, xưởng thực hành, thư viện, ký túc xá. Các phòng học được trang bị máy lạnh và thiết bị giảng dạy hiện đại."
+
+  utter_cam_on:
+    - text: "Không có gì! Rất vui được giúp bạn. Nếu có thắc mắc gì thêm, đừng ngại hỏi nhé!"
+    - text: "Rất vui khi có thể giúp đỡ bạn. Hãy liên hệ với tôi nếu bạn cần thêm thông tin!"
+
+  utter_tam_biet:
+    - text: "Tạm biệt! Chúc bạn một ngày tốt lành."
+    - text: "Hẹn gặp lại bạn! Chúc bạn những điều tốt đẹp nhất."
+    - text: "Chào tạm biệt! Nếu cần thêm thông tin, hãy quay lại trò chuyện với tôi nhé."
+  utter_default:
+    - text: "Xin lỗi, tôi không hiểu câu hỏi của bạn. Bạn có thể hỏi lại được không?"
+    - text: "Tôi không chắc về câu hỏi đó. Bạn có thể cung cấp thêm thông tin không?"
+actions:
+  - action_xu_ly_ten
+  - action_tra_loi_nganh_tuyen_sinh
+  - action_tra_loi_thong_tin_nganh
+  - action_tra_loi_co_hoi_viec_lam
+  - action_tra_loi_diem_chuan_nganh
+  - action_tra_loi_khoi_xet_tuyen
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

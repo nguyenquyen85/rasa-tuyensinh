@@ -1,0 +1,73 @@
+version: "3.1"
+
+rules:
+  - rule: Chào hỏi người dùng khi bắt đầu cuộc trò chuyện
+    steps:
+      - intent: chao_hoi
+      - action: utter_chao_hoi
+      - action: utter_hoi_ten
+
+  - rule: Xử lý khi người dùng nhập tên
+    steps:
+      - intent: nhap_ten
+      - action: action_xu_ly_ten
+
+  - rule: Thông tin về ngành tuyển sinh
+    steps:
+      - intent: hoi_nganh_tuyen_sinh
+      - action: action_tra_loi_nganh_tuyen_sinh
+
+  - rule: Thông tin giới thiệu về ngành cụ thể
+    steps:
+      - intent: hoi_thong_tin_gioi_thieu_chung_cua_nganh
+      - action: action_tra_loi_thong_tin_nganh
+
+  - rule: Thông tin về cơ hội việc làm của ngành
+    steps:
+      - intent: hoi_co_hoi_viec_lam_cua_nganh
+      - action: action_tra_loi_co_hoi_viec_lam
+
+  - rule: Thông tin về điểm chuẩn của ngành
+    steps:
+      - intent: hoi_diem_chuan_cua_nganh
+      - action: action_tra_loi_diem_chuan_nganh
+
+  - rule: Thông tin về khối xét tuyển của ngành
+    steps:
+      - intent: hoi_khoi_tuyen_sinh_cua_nganh
+      - action: action_tra_loi_khoi_xet_tuyen
+
+  - rule: Thông tin về chương trình đào tạo
+    steps:
+      - intent: hoi_chuong_trinh_dao_tao_cua_truong
+      - action: utter_tra_loi_chuong_trinh_dao_tao
+
+  - rule: Thông tin về học phí
+    steps:
+      - intent: hoi_hoc_phi
+      - action: utter_tra_loi_hoc_phi
+
+  - rule: Thông tin về địa điểm học
+    steps:
+      - intent: hoi_dia_diem_hoc
+      - action: utter_tra_loi_dia_diem_hoc
+
+  - rule: Thông tin về phương thức xét tuyển
+    steps:
+      - intent: hoi_phuong_thuc_xet_tuyen
+      - action: utter_tra_loi_phuong_thuc_xet_tuyen
+
+  - rule: Thông tin về cơ sở vật chất
+    steps:
+      - intent: hoi_co_so_vat_chat
+      - action: utter_tra_loi_co_so_vat_chat
+
+  - rule: Phản hồi khi người dùng cảm ơn
+    steps:
+      - intent: cam_on
+      - action: utter_cam_on
+
+  - rule: Tạm biệt khi người dùng muốn kết thúc cuộc trò chuyện
+    steps:
+      - intent: tam_biet
+      - action: utter_tam_biet

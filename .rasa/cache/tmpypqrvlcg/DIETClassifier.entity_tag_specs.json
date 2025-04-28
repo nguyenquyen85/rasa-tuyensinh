@@ -1,0 +1,44 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-nam",
+      "2": "I-nam",
+      "3": "L-nam",
+      "4": "U-nam",
+      "5": "B-ten_nganh",
+      "6": "I-ten_nganh",
+      "7": "L-ten_nganh",
+      "8": "U-ten_nganh",
+      "9": "B-ten_nguoi_dung",
+      "10": "I-ten_nguoi_dung",
+      "11": "L-ten_nguoi_dung",
+      "12": "U-ten_nguoi_dung",
+      "13": "B-ten_ngành",
+      "14": "I-ten_ngành",
+      "15": "L-ten_ngành",
+      "16": "U-ten_ngành",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-nam": 1,
+      "I-nam": 2,
+      "L-nam": 3,
+      "U-nam": 4,
+      "B-ten_nganh": 5,
+      "I-ten_nganh": 6,
+      "L-ten_nganh": 7,
+      "U-ten_nganh": 8,
+      "B-ten_nguoi_dung": 9,
+      "I-ten_nguoi_dung": 10,
+      "L-ten_nguoi_dung": 11,
+      "U-ten_nguoi_dung": 12,
+      "B-ten_ngành": 13,
+      "I-ten_ngành": 14,
+      "L-ten_ngành": 15,
+      "U-ten_ngành": 16,
+      "O": 0
+    },
+    "num_tags": 17
+  }
+]

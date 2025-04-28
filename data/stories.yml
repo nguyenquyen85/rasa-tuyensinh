@@ -1,0 +1,119 @@
+version: "3.1"
+
+stories:
+  - story: Luồng trò chuyện đầy đủ - Hỏi về ngành và điểm chuẩn
+    steps:
+      - intent: chao_hoi
+      - action: utter_chao_hoi
+      - action: utter_hoi_ten
+      - intent: nhap_ten
+        entities:
+          - ten_nguoi_dung: "Minh Tuấn"
+      - action: action_xu_ly_ten
+      - intent: hoi_nganh_tuyen_sinh
+      - action: action_tra_loi_nganh_tuyen_sinh
+      - intent: hoi_thong_tin_gioi_thieu_chung_cua_nganh
+        entities:
+          - ten_nganh: "Công nghệ thông tin"
+      - action: action_tra_loi_thong_tin_nganh
+      - intent: hoi_diem_chuan_cua_nganh
+        entities:
+          - ten_nganh: "Công nghệ thông tin"
+          - nam: "năm 2024"
+      - action: action_tra_loi_diem_chuan_nganh
+      - intent: cam_on
+      - action: utter_cam_on
+      - intent: tam_biet
+      - action: utter_tam_biet
+
+  - story: Hỏi về cơ hội việc làm và khối xét tuyển
+    steps:
+      - intent: chao_hoi
+      - action: utter_chao_hoi
+      - action: utter_hoi_ten
+      - intent: nhap_ten
+        entities:
+          - ten_nguoi_dung: "Ngọc Anh"
+      - action: action_xu_ly_ten
+      - intent: hoi_co_hoi_viec_lam_cua_nganh
+        entities:
+          - ten_nganh: "Công nghệ kỹ thuật ô tô"
+      - action: action_tra_loi_co_hoi_viec_lam
+      - intent: hoi_khoi_tuyen_sinh_cua_nganh
+        entities:
+          - ten_nganh: "Công nghệ kỹ thuật ô tô"
+      - action: action_tra_loi_khoi_xet_tuyen
+      - intent: cam_on
+      - action: utter_cam_on
+
+  - story: Hỏi về chương trình đào tạo và học phí
+    steps:
+      - intent: chao_hoi
+      - action: utter_chao_hoi
+      - action: utter_hoi_ten
+      - intent: nhap_ten
+        entities:
+          - ten_nguoi_dung: "Thu Hà"
+      - action: action_xu_ly_ten
+      - intent: hoi_chuong_trinh_dao_tao_cua_truong
+      - action: utter_tra_loi_chuong_trinh_dao_tao
+      - intent: hoi_hoc_phi
+      - action: utter_tra_loi_hoc_phi
+      - intent: tam_biet
+      - action: utter_tam_biet
+
+  - story: Hỏi về địa điểm học và cơ sở vật chất
+    steps:
+      - intent: chao_hoi
+      - action: utter_chao_hoi
+      - action: utter_hoi_ten
+      - intent: nhap_ten
+        entities:
+          - ten_nguoi_dung: "Hoàng Long"
+      - action: action_xu_ly_ten
+      - intent: hoi_dia_diem_hoc
+      - action: utter_tra_loi_dia_diem_hoc
+      - intent: hoi_co_so_vat_chat
+      - action: utter_tra_loi_co_so_vat_chat
+      - intent: cam_on
+      - action: utter_cam_on
+
+  - story: Hỏi về phương thức xét tuyển và các ngành
+    steps:
+      - intent: chao_hoi
+      - action: utter_chao_hoi
+      - action: utter_hoi_ten
+      - intent: nhap_ten
+        entities:
+          - ten_nguoi_dung: "Phương Linh"
+      - action: action_xu_ly_ten
+      - intent: hoi_phuong_thuc_xet_tuyen
+      - action: utter_tra_loi_phuong_thuc_xet_tuyen
+      - intent: hoi_nganh_tuyen_sinh
+      - action: action_tra_loi_nganh_tuyen_sinh
+      - intent: hoi_diem_chuan_cua_nganh
+        entities:
+          - ten_nganh: "Logistics và hạ tầng giao thông"
+      - action: action_tra_loi_diem_chuan_nganh
+      - intent: tam_biet
+      - action: utter_tam_biet
+
+  - story: Hỏi thông tin chi tiết về một ngành cụ thể
+    steps:
+      - intent: chao_hoi
+      - action: utter_chao_hoi
+      - action: utter_hoi_ten
+      - intent: hoi_thong_tin_gioi_thieu_chung_cua_nganh
+        entities:
+          - ten_nganh: "Quy hoạch và quản lý giao thông"
+      - action: action_tra_loi_thong_tin_nganh
+      - intent: hoi_co_hoi_viec_lam_cua_nganh
+        entities:
+          - ten_nganh: "Quy hoạch và quản lý giao thông"
+      - action: action_tra_loi_co_hoi_viec_lam
+      - intent: hoi_khoi_tuyen_sinh_cua_nganh
+        entities:
+          - ten_nganh: "Quy hoạch và quản lý giao thông"
+      - action: action_tra_loi_khoi_xet_tuyen
+      - intent: cam_on
+      - action: utter_cam_on

@@ -1,0 +1,312 @@
+version: "3.1"
+nlu:
+- intent: chao_hoi
+  examples: |
+    - xin chào
+    - chào bạn
+    - hello
+    - hi
+    - có ai ở đây không
+    - bạn ơi
+- intent: nhap_ten
+  examples: |
+    - tôi là [Nguyễn Văn A](ten_nguoi_dung)
+    - tên tôi là [Trịnh Trần Phương Tuấn](ten_nguoi_dung)
+    - mình tên là [Tuấn Hưng](ten_nguoi_dung)
+    - mình tên [Thảo](ten_nguoi_dung)
+    - tôi tên [Nguyễn Tiến](ten_nguoi_dung)
+- intent: hoi_chuong_trinh_dao_tao_cua_truong
+  examples: |
+    - chương trình đào tạo như thế nào
+    - thời gian học mấy năm
+    - có chương trình liên kết quốc tế không
+    - có học tiếng anh không
+- intent: hoi_nganh_tuyen_sinh
+  examples: |
+    - trường có những ngành nào
+    - cho tôi biết các ngành đào tạo
+    - ngành học ở trường giao thông vận tải
+    - UTH đào tạo những ngành gì
+    - các ngành học tại đại học giao thông vận tải
+    - trường có những chuyên ngành nào
+- intent: hoi_thong_tin_gioi_thieu_chung_cua_nganh
+  examples: |
+    - cho thêm thông tin về ngành [Công nghệ kỹ thuật cơ khí](ten_nganh)
+    - thông tin ngành [Công nghệ kỹ thuật điều khiển và tự động hóa](ten_nganh)
+    - giới thiệu ngành [Quy hoạch và quản lý giao thông](ten_nganh)
+    - cho thêm thông tin về ngành [Logistics và hạ tầng giao thông](ten_nganh)
+    - thông tin ngành [Công nghệ kỹ thuật ô tô](ten_nganh)
+    - giới thiệu ngành [Công nghệ thông tin](ten_nganh)
+    - cho thêm thông tin về ngành [Công nghệ ô tô số](ten_nganh)
+    - thông tin ngành [Khoa học dữ liệu và Al](ten_nganh)
+    - giới thiệu ngành [Smart logistics](ten_nganh)
+    - cho thêm thông tin về ngành [Truyền thông số và đổi mới sáng tạo](ten_nganh)
+    - thông tin ngành [Hệ thống thông tin quản lý](ten_nganh)
+    - giới thiệu ngành [Kinh tế số và trí tuệ nhân tạo](ten_nganh)
+    - cho thêm thông tin về ngành [Quản lý và kinh doanh vận tải](ten_nganh)
+    - thông tin ngành [Quản trị logistics và vận tải đa phương thức](ten_nganh)
+    - giới thiệu ngành [Khai thác đường sắt tốc độ cao](ten_nganh)
+    - cho thêm thông tin về ngành [Khoa học dữ liệu](ten_nganh)
+    - thông tin ngành [Điều khiển và quản lý tàu biển](ten_nganh)
+    - giới thiệu ngành [Khai thác máy tàu thủy và quản lý kỹ thuật](ten_nganh)
+    - cho thêm thông tin về ngành [Kỹ thuật điện, điện tử và điều khiển](ten_nganh)
+    - thông tin ngành [Cơ điện tử](ten_nganh)
+    - giới thiệu ngành [Quản lý cảng và logistics](ten_ngành)
+    - cho thêm thông tin về ngành [Quản lý hàng hải và đường thuỷ](ten_nganh)
+    - thông tin ngành [Kinh tế hàng hải và đường thủy](ten_nganh)
+    - giới thiệu ngành [Kinh tế vận tải hàng không](ten_nganh)
+    - cho thêm thông tin về ngành [Kinh tế và quản lý bất động sản](ten_nganh)
+    - thông tin ngành [Kinh tế xây dựng](ten_nganh)
+    - giới thiệu ngành [Quản lý và khai thác Máy xếp dỡ - Xây dựng](ten_nganh)
+    - cho thêm thông tin về ngành [Cơ khí tự động](ten_nganh)
+    - thông tin ngành [Cơ khí đường sắt tốc độ cao và đường sắt đô thị](ten_nganh)
+    - giới thiệu ngành [Kỹ thuật cơ khí hàng không](ten_nganh)
+    - cho thêm thông tin về ngành [Điện công nghiệp](ten_nganh)
+    - thông tin ngành [Hệ thống điện giao thông](ten_nganh)
+    - giới thiệu ngành [Năng lượng tái tạo](ten_nganh)
+    - cho thêm thông tin về ngành [Kỹ thuật điện tử - viễn thông](ten_nganh)
+    - thông tin ngành [Kỹ thuật điều khiển và tự động hóa](ten_nganh)
+    - giới thiệu ngành [Kỹ thuật điều khiển tự động và thông tin tín hiệu đường sắt tốc độ cao](ten_nganh)
+    - cho thêm thông tin về ngành [Kỹ thuật môi trường](ten_nganh)
+    - thông tin ngành [Quản lý an toàn và môi trường](ten_nganh)
+    - giới thiệu ngành [Cơ khí ô tô](ten_nganh)
+    - cho thêm thông tin về ngành [Cơ điện tử ô tô](ten_nganh)
+    - thông tin ngành [Kỹ thuật tàu thủy, công trình nổi và quản lý hệ thống công nghiệp](ten_nganh)
+    - giới thiệu ngành [Xây dựng dân dụng và công nghiệp](ten_nganh)
+    - cho thêm thông tin về ngành [Kỹ thuật kết cấu công trình](ten_nganh)
+    - thông tin ngành [Thiết kế nội thất](ten_nganh)
+    - giới thiệu ngành [Xây dựng cầu đường](ten_nganh)
+    - cho thêm thông tin về ngành [Xây dựng đường bộ](ten_nganh)
+    - thông tin ngành [Xây dựng công trình giao thông đô thị](ten_nganh)
+    - giới thiệu ngành [Xây dựng đường sắt tốc độ cao và đường sắt đô thị](ten_nganh)
+    - cho thêm thông tin về ngành [Xây dựng và quản lý cảng - công trình giao thông thủy](ten_nganh)
+    - thông tin ngành [Logistics và quản lý chuỗi cung ứng](ten_nganh)
+    - giới thiệu ngành [Luật](ten_nganh)
+    - cho thêm thông tin về ngành [Mạng máy tính và truyền thông dữ liệu](ten_nganh)
+    - thông tin ngành [Kỹ thuật thiết kế vi mạch và Al](ten_nganh)
+    - giới thiệu ngành [Ngôn ngữ Anh](ten_nganh)
+    - cho thêm thông tin về ngành [Tiếng anh thương mại, Logistics và vận tải quốc tế](ten_nganh)
+    - thông tin ngành [Quản lý xây dựng](ten_nganh)
+
+- intent: hoi_co_hoi_viec_lam_cua_nganh
+  examples: |
+    - cơ hội việc làm của ngành [Công nghệ kỹ thuật cơ khí](ten_nganh)
+    - cơ hội việc làm của ngành [Công nghệ kỹ thuật điều khiển và tự động hóa](ten_nganh)
+    - cơ hội việc làm của ngành [Quy hoạch và quản lý giao thông](ten_nganh)
+    - cơ hội việc làm của ngành [Logistics và hạ tầng giao thông](ten_nganh)
+    - cơ hội việc làm của ngành [Công nghệ kỹ thuật ô tô](ten_nganh)
+    - cơ hội việc làm của ngành [Công nghệ thông tin](ten_nganh)
+    - cơ hội việc làm của ngành [Công nghệ ô tô số](ten_nganh)
+    - cơ hội việc làm của ngành [Khoa học dữ liệu và Al](ten_nganh)
+    - cơ hội việc làm của ngành [Smart logistics](ten_nganh)
+    - cơ hội việc làm của ngành [Truyền thông số và đổi mới sáng tạo](ten_nganh)
+    - cơ hội việc làm của ngành [Hệ thống thông tin quản lý](ten_nganh)
+    - cơ hội việc làm của ngành [Kinh tế số và trí tuệ nhân tạo](ten_nganh)
+    - cơ hội việc làm của ngành [Quản lý và kinh doanh vận tải](ten_nganh)
+    - cơ hội việc làm của ngành [Quản trị logistics và vận tải đa phương thức](ten_nganh)
+    - cơ hội việc làm của ngành [Khai thác đường sắt tốc độ cao](ten_nganh)
+    - cơ hội việc làm của ngành [Khoa học dữ liệu](ten_nganh)
+    - cơ hội việc làm của ngành [Điều khiển và quản lý tàu biển](ten_nganh)
+    - cơ hội việc làm của ngành [Khai thác máy tàu thủy và quản lý kỹ thuật](ten_nganh)
+    - cơ hội việc làm của ngành [Kỹ thuật điện, điện tử và điều khiển](ten_nganh)
+    - cơ hội việc làm của ngành [Cơ điện tử](ten_nganh)
+    - cơ hội việc làm của ngành [Quản lý cảng và logistics](ten_nganh)
+    - cơ hội việc làm của ngành [Quản lý hàng hải và đường thuỷ](ten_nganh)
+    - cơ hội việc làm của ngành [Kinh tế hàng hải và đường thủy](ten_nganh)
+    - cơ hội việc làm của ngành [Kinh tế vận tải hàng không](ten_nganh)
+    - cơ hội việc làm của ngành [Kinh tế và quản lý bất động sản](ten_nganh)
+    - cơ hội việc làm của ngành [Kinh tế xây dựng](ten_nganh)
+    - cơ hội việc làm của ngành [Quản lý và khai thác Máy xếp dỡ - Xây dựng](ten_nganh)
+    - cơ hội việc làm của ngành [Cơ khí tự động](ten_nganh)
+    - cơ hội việc làm của ngành [Cơ khí đường sắt tốc độ cao và đường sắt đô thị](ten_nganh)
+    - cơ hội việc làm của ngành [Kỹ thuật cơ khí hàng không](ten_nganh)
+    - cơ hội việc làm của ngành [Điện công nghiệp](ten_nganh)
+    - cơ hội việc làm của ngành [Hệ thống điện giao thông](ten_nganh)
+    - cơ hội việc làm của ngành [Năng lượng tái tạo](ten_nganh)
+    - cơ hội việc làm của ngành [Kỹ thuật điện tử - viễn thông](ten_nganh)
+    - cơ hội việc làm của ngành [Kỹ thuật điều khiển và tự động hóa](ten_nganh)
+    - cơ hội việc làm của ngành [Kỹ thuật điều khiển tự động và thông tin tín hiệu đường sắt tốc độ cao](ten_nganh)
+    - cơ hội việc làm của ngành [Kỹ thuật môi trường](ten_nganh)
+    - cơ hội việc làm của ngành [Quản lý an toàn và môi trường](ten_nganh)
+    - cơ hội việc làm của ngành [Cơ khí ô tô](ten_nganh)
+    - cơ hội việc làm của ngành [Cơ điện tử ô tô](ten_nganh)
+    - cơ hội việc làm của ngành [Kỹ thuật tàu thủy, công trình nổi và quản lý hệ thống công nghiệp](ten_nganh)
+    - cơ hội việc làm của ngành [Xây dựng dân dụng và công nghiệp](ten_nganh)
+    - cơ hội việc làm của ngành [Kỹ thuật kết cấu công trình](ten_nganh)
+    - cơ hội việc làm của ngành [Thiết kế nội thất](ten_nganh)
+    - cơ hội việc làm của ngành [Xây dựng cầu đường](ten_ngành)
+    - cơ hội việc làm của ngành [Xây dựng đường bộ](ten_nganh)
+    - cơ hội việc làm của ngành [Xây dựng công trình giao thông đô thị](ten_nganh)
+    - cơ hội việc làm của ngành [Xây dựng đường sắt tốc độ cao và đường sắt đô thị](ten_nganh)
+    - cơ hội việc làm của ngành [Xây dựng và quản lý cảng - công trình giao thông thủy](ten_nganh)
+    - cơ hội việc làm của ngành [Logistics và quản lý chuỗi cung ứng](ten_nganh)
+    - cơ hội việc làm của ngành [Luật](ten_nganh)
+    - cơ hội việc làm của ngành [Mạng máy tính và truyền thông dữ liệu](ten_nganh)
+    - cơ hội việc làm của ngành [Kỹ thuật thiết kế vi mạch và Al](ten_nganh)
+    - cơ hội việc làm của ngành [Ngôn ngữ Anh](ten_nganh)
+    - cơ hội việc làm của ngành [Tiếng anh thương mại, Logistics và vận tải quốc tế](ten_nganh)
+    - cơ hội việc làm của ngành [Quản lý xây dựng](ten_nganh)
+- intent: hoi_diem_chuan_cua_nganh
+  examples: |
+    - điểm chuẩn ngành [Công nghệ kỹ thuật cơ khí](ten_nganh) [năm 2024](nam) là bao nhiêu?
+    - điểm chuẩn ngành [Công nghệ kỹ thuật điều khiển và tự động hóa](ten_nganh) của các năm trước?
+    - điểm chuẩn ngành [Quy hoạch và quản lý giao thông](ten_nganh) năm ngoái là bao nhiêu?
+    - điểm chuẩn ngành [Logistics và hạ tầng giao thông](ten_nganh) 2 năm trước là bao nhiêu?
+    - điểm chuẩn ngành [Công nghệ kỹ thuật ô tô](ten_nganh) các năm gần đây là bao nhiêu?
+    - điểm chuẩn ngành [Công nghệ thông tin](ten_nganh) [năm 2024](nam) là bao nhiêu?
+    - điểm chuẩn ngành [Công nghệ ô tô số](ten_nganh) là bao nhiêu?
+    - điểm chuẩn ngành [Khoa học dữ liệu và Al](ten_nganh) năm [2023](nam)?
+    - điểm chuẩn ngành [Smart logistics](ten_nganh) năm nay là bao nhiêu?
+    - điểm chuẩn ngành [Truyền thông số và đổi mới sáng tạo](ten_nganh) các năm?
+    - điểm chuẩn ngành [Hệ thống thông tin quản lý](ten_nganh) [năm 2022](nam)?
+    - điểm chuẩn ngành [Kinh tế số và trí tuệ nhân tạo](ten_nganh)?
+    - điểm chuẩn ngành [Quản lý và kinh doanh vận tải](ten_nganh) [năm 2024](nam)?
+    - điểm chuẩn ngành [Quản trị logistics và vận tải đa phương thức](ten_nganh) các năm trước?
+    - điểm chuẩn ngành [Khai thác đường sắt tốc độ cao](ten_nganh) năm ngoái là bao nhiêu?
+    - điểm chuẩn ngành [Khoa học dữ liệu](ten_nganh) 2 năm trước là bao nhiêu?
+    - điểm chuẩn ngành [Điều khiển và quản lý tàu biển](ten_nganh) các năm gần đây là bao nhiêu?
+    - điểm chuẩn ngành [Khai thác máy tàu thủy và quản lý kỹ thuật](ten_nganh) [năm 2024](nam) là bao nhiêu?
+    - điểm chuẩn ngành [Kỹ thuật điện, điện tử và điều khiển](ten_nganh) của các năm trước?
+    - điểm chuẩn ngành [Cơ điện tử](ten_nganh) năm ngoái là bao nhiêu?
+    - điểm chuẩn ngành [Quản lý cảng và logistics](ten_nganh) 2 năm trước là bao nhiêu?
+    - điểm chuẩn ngành [Quản lý hàng hải và đường thuỷ](ten_nganh) các năm gần đây là bao nhiêu?
+    - điểm chuẩn ngành [Kinh tế hàng hải và đường thủy](ten_nganh) [năm 2024](nam) là bao nhiêu?
+    - điểm chuẩn ngành [Kinh tế vận tải hàng không](ten_nganh) của các năm trước?
+    - điểm chuẩn ngành [Kinh tế và quản lý bất động sản](ten_nganh) năm ngoái là bao nhiêu?
+    - điểm chuẩn ngành [Kinh tế xây dựng](ten_nganh) 2 năm trước là bao nhiêu?
+    - điểm chuẩn ngành [Quản lý và khai thác Máy xếp dỡ - Xây dựng](ten_nganh) các năm gần đây là bao nhiêu?
+    - điểm chuẩn ngành [Cơ khí tự động](ten_nganh) [năm 2024](nam) là bao nhiêu?
+    - điểm chuẩn ngành [Cơ khí đường sắt tốc độ cao và đường sắt đô thị](ten_nganh) của các năm trước?
+    - điểm chuẩn ngành [Kỹ thuật cơ khí hàng không](ten_nganh) năm ngoái là bao nhiêu?
+    - điểm chuẩn ngành [Điện công nghiệp](ten_nganh) 2 năm trước là bao nhiêu?
+    - điểm chuẩn ngành [Hệ thống điện giao thông](ten_nganh) các năm gần đây là bao nhiêu?
+    - điểm chuẩn ngành [Năng lượng tái tạo](ten_nganh) [năm 2024](nam) là bao nhiêu?
+    - điểm chuẩn ngành [Kỹ thuật điện tử - viễn thông](ten_nganh) của các năm trước?
+    - điểm chuẩn ngành [Kỹ thuật điều khiển và tự động hóa](ten_nganh) năm ngoái là bao nhiêu?
+    - điểm chuẩn ngành [Kỹ thuật điều khiển tự động và thông tin tín hiệu đường sắt tốc độ cao](ten_nganh) 2 năm trước là bao nhiêu?
+    - điểm chuẩn ngành [Kỹ thuật môi trường](ten_nganh) các năm gần đây là bao nhiêu?
+    - điểm chuẩn ngành [Quản lý an toàn và môi trường](ten_nganh) [năm 2024](nam) là bao nhiêu?
+    - điểm chuẩn ngành [Cơ khí ô tô](ten_nganh) của các năm trước?
+    - điểm chuẩn ngành [Cơ điện tử ô tô](ten_nganh) năm ngoái là bao nhiêu?
+    - điểm chuẩn ngành [Kỹ thuật tàu thủy, công trình nổi và quản lý hệ thống công nghiệp](ten_nganh) 2 năm trước là bao nhiêu?
+    - điểm chuẩn ngành [Xây dựng dân dụng và công nghiệp](ten_nganh) các năm gần đây là bao nhiêu?
+    - điểm chuẩn ngành [Kỹ thuật kết cấu công trình](ten_nganh) [năm 2024](nam) là bao nhiêu?
+    - điểm chuẩn ngành [Thiết kế nội thất](ten_nganh) của các năm trước?
+    - điểm chuẩn ngành [Xây dựng cầu đường](ten_nganh) năm ngoái là bao nhiêu?
+    - điểm chuẩn ngành [Xây dựng đường bộ](ten_nganh) 2 năm trước là bao nhiêu?
+    - điểm chuẩn ngành [Xây dựng công trình giao thông đô thị](ten_nganh) các năm gần đây là bao nhiêu?
+    - điểm chuẩn ngành [Xây dựng đường sắt tốc độ cao và đường sắt đô thị](ten_nganh) [năm 2024](nam) là bao nhiêu?
+    - điểm chuẩn ngành [Xây dựng và quản lý cảng - công trình giao thông thủy](ten_nganh) của các năm trước?
+    - điểm chuẩn ngành [Logistics và quản lý chuỗi cung ứng](ten_nganh) năm ngoái là bao nhiêu?
+    - điểm chuẩn ngành [Luật](ten_nganh) 2 năm trước là bao nhiêu?
+    - điểm chuẩn ngành [Mạng máy tính và truyền thông dữ liệu](ten_nganh) các năm gần đây là bao nhiêu?
+    - điểm chuẩn ngành [Kỹ thuật thiết kế vi mạch và Al](ten_nganh) [năm 2024](nam) là bao nhiêu?
+    - điểm chuẩn ngành [Ngôn ngữ Anh](ten_nganh) của các năm trước?
+    - điểm chuẩn ngành [Tiếng anh thương mại, Logistics và vận tải quốc tế](ten_nganh) năm ngoái là bao nhiêu?
+    - điểm chuẩn ngành [Quản lý xây dựng](ten_nganh) 2 năm trước là bao nhiêu?
+- intent: hoi_khoi_tuyen_sinh_cua_nganh
+  examples: |
+    - khối xét tuyển vào ngành [Kỹ thuật ô tô](ten_nganh)
+    - cần thi khối gì để vào [Quản trị kinh doanh](ten_nganh)
+    - [Công nghệ thông tin](ten_nganh) lấy khối nào
+    - khối xét tuyển vào ngành [Công nghệ kỹ thuật cơ khí](ten_nganh)
+    - cần thi khối gì để vào [Công nghệ kỹ thuật điều khiển và tự động hóa](ten_nganh)
+    - [Quy hoạch và quản lý giao thông](ten_nganh) lấy khối nào
+    - khối xét tuyển vào ngành [Logistics và hạ tầng giao thông](ten_nganh)
+    - cần thi khối gì để vào [Công nghệ kỹ thuật ô tô](ten_nganh)
+    - [Công nghệ thông tin](ten_nganh) lấy khối nào
+    - khối xét tuyển vào ngành [Công nghệ ô tô số](ten_nganh)
+    - cần thi khối gì để vào [Khoa học dữ liệu và Al](ten_nganh)
+    - [Smart logistics](ten_nganh) lấy khối nào
+    - khối xét tuyển vào ngành [Truyền thông số và đổi mới sáng tạo](ten_nganh)
+    - cần thi khối gì để vào [Hệ thống thông tin quản lý](ten_nganh)
+    - [Kinh tế số và trí tuệ nhân tạo](ten_nganh) lấy khối nào
+    - khối xét tuyển vào ngành [Quản lý và kinh doanh vận tải](ten_nganh)
+    - cần thi khối gì để vào [Quản trị logistics và vận tải đa phương thức](ten_ngành)
+    - [Khai thác đường sắt tốc độ cao](ten_nganh) lấy khối nào
+    - khối xét tuyển vào ngành [Khoa học dữ liệu](ten_nganh)
+    - cần thi khối gì để vào [Điều khiển và quản lý tàu biển](ten_nganh)
+    - [Khai thác máy tàu thủy và quản lý kỹ thuật](ten_nganh) lấy khối nào
+    - khối xét tuyển vào ngành [Kỹ thuật điện, điện tử và điều khiển](ten_nganh)
+    - cần thi khối gì để vào [Cơ điện tử](ten_nganh)
+    - [Quản lý cảng và logistics](ten_nganh) lấy khối nào
+    - khối xét tuyển vào ngành [Quản lý hàng hải và đường thuỷ](ten_nganh)
+    - cần thi khối gì để vào [Kinh tế hàng hải và đường thủy](ten_nganh)
+    - [Kinh tế vận tải hàng không](ten_nganh) lấy khối nào
+    - khối xét tuyển vào ngành [Kinh tế và quản lý bất động sản](ten_nganh)
+    - cần thi khối gì để vào [Kinh tế xây dựng](ten_nganh)
+    - [Quản lý và khai thác Máy xếp dỡ - Xây dựng](ten_nganh) lấy khối nào
+    - khối xét tuyển vào ngành [Cơ khí tự động](ten_nganh)
+    - cần thi khối gì để vào [Cơ khí đường sắt tốc độ cao và đường sắt đô thị](ten_nganh)
+    - [Kỹ thuật cơ khí hàng không](ten_nganh) lấy khối nào
+    - khối xét tuyển vào ngành [Điện công nghiệp](ten_nganh)
+    - cần thi khối gì để vào [Hệ thống điện giao thông](ten_nganh)
+    - [Năng lượng tái tạo](ten_nganh) lấy khối nào
+    - khối xét tuyển vào ngành [Kỹ thuật điện tử - viễn thông](ten_nganh)
+    - cần thi khối gì để vào [Kỹ thuật điều khiển và tự động hóa](ten_nganh)
+    - [Kỹ thuật điều khiển tự động và thông tin tín hiệu đường sắt tốc độ cao](ten_nganh) lấy khối nào
+    - khối xét tuyển vào ngành [Kỹ thuật môi trường](ten_nganh)
+    - cần thi khối gì để vào [Quản lý an toàn và môi trường](ten_nganh)
+    - [Cơ khí ô tô](ten_nganh) lấy khối nào
+    - khối xét tuyển vào ngành [Cơ điện tử ô tô](ten_nganh)
+    - cần thi khối gì để vào [Kỹ thuật tàu thủy, công trình nổi và quản lý hệ thống công nghiệp](ten_nganh)
+    - [Xây dựng dân dụng và công nghiệp](ten_nganh) lấy khối nào
+    - khối xét tuyển vào ngành [Kỹ thuật kết cấu công trình](ten_nganh)
+    - cần thi khối gì để vào [Thiết kế nội thất](ten_nganh)
+    - [Xây dựng cầu đường](ten_nganh) lấy khối nào
+    - khối xét tuyển vào ngành [Xây dựng đường bộ](ten_nganh)
+    - cần thi khối gì để vào [Xây dựng công trình giao thông đô thị](ten_nganh)
+    - [Xây dựng đường sắt tốc độ cao và đường sắt đô thị](ten_nganh) lấy khối nào
+    - khối xét tuyển vào ngành [Xây dựng và quản lý cảng - công trình giao thông thủy](ten_nganh)
+    - cần thi khối gì để vào [Logistics và quản lý chuỗi cung ứng](ten_nganh)
+    - [Luật](ten_nganh) lấy khối nào
+    - khối xét tuyển vào ngành [Mạng máy tính và truyền thông dữ liệu](ten_nganh)
+    - cần thi khối gì để vào [Kỹ thuật thiết kế vi mạch và Al](ten_nganh)
+    - [Ngôn ngữ Anh](ten_nganh) lấy khối nào
+    - khối xét tuyển vào ngành [Tiếng anh thương mại, Logistics và vận tải quốc tế](ten_nganh)
+    - cần thi khối gì để vào [Quản lý xây dựng](ten_nganh)
+
+- intent: hoi_hoc_phi
+  examples: |
+    - học phí là bao nhiêu
+    - chi phí học tập ở trường
+- intent: hoi_dia_diem_hoc
+  examples: |
+    - trường học ở đâu
+    - địa chỉ trường ở đâu
+    - cơ sở học tập
+    - trường có mấy cơ sở
+    - sinh viên năm nhất học ở đâu
+    - cơ sở chính của trường ở đâu
+- intent: cam_on
+  examples: |
+    - cảm ơn
+    - cảm ơn bạn
+    - thank you
+    - thanks
+    - cám ơn thông tin
+    - cảm ơn đã tư vấn
+- intent: tam_biet
+  examples: |
+    - tạm biệt
+    - goodbye
+    - bye
+    - hẹn gặp lại
+    - tôi phải đi đây
+    - kết thúc cuộc trò chuyện
+- intent: hoi_phuong_thuc_xet_tuyen
+  examples: |
+    - trường có những phương thức xét tuyển nào
+    - làm thế nào để xét tuyển vào trường
+    - xét tuyển bằng học bạ được không
+    - có xét tuyển thẳng không
+    - có cần thi đánh giá năng lực không
+    - cách thức xét tuyển vào UTH
+- intent: hoi_co_so_vat_chat
+  examples: |
+    - cơ sở vật chất trường như thế nào
+    - ký túc xá có không
+    - trường có phòng thí nghiệm không
+    - thư viện trường ra sao
+    - có khu thực hành không
+    - không gian học tập tại trường

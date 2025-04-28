@@ -1,0 +1,76 @@
+{
+  "type": "MaxHistoryTrackerFeaturizer",
+  "state_featurizer": {
+    "action_texts": [],
+    "entity_tag_specs": [],
+    "feature_states": {
+      "intent": {
+        "back": 0,
+        "cam_on": 1,
+        "chao_hoi": 2,
+        "hoi_chuong_trinh_dao_tao_cua_truong": 3,
+        "hoi_co_hoi_viec_lam_cua_nganh": 4,
+        "hoi_co_so_vat_chat": 5,
+        "hoi_dia_diem_hoc": 6,
+        "hoi_diem_chuan_cua_nganh": 7,
+        "hoi_hoc_phi": 8,
+        "hoi_khoi_tuyen_sinh_cua_nganh": 9,
+        "hoi_nganh_tuyen_sinh": 10,
+        "hoi_phuong_thuc_xet_tuyen": 11,
+        "hoi_thong_tin_gioi_thieu_chung_cua_nganh": 12,
+        "nhap_ten": 13,
+        "nlu_fallback": 14,
+        "out_of_scope": 15,
+        "restart": 16,
+        "session_start": 17,
+        "tam_biet": 18
+      },
+      "action_name": {
+        "action_listen": 0,
+        "action_restart": 1,
+        "action_session_start": 2,
+        "action_default_fallback": 3,
+        "action_deactivate_loop": 4,
+        "action_revert_fallback_events": 5,
+        "action_default_ask_affirmation": 6,
+        "action_default_ask_rephrase": 7,
+        "action_two_stage_fallback": 8,
+        "action_unlikely_intent": 9,
+        "action_back": 10,
+        "...": 11,
+        "action_extract_slots": 12,
+        "utter_chao_hoi": 13,
+        "utter_hoi_ten": 14,
+        "utter_cam_on": 15,
+        "utter_tam_biet": 16,
+        "utter_hoi_hoc_phi": 17,
+        "utter_hoi_dia_diem_hoc": 18,
+        "utter_hoi_phuong_thuc_xet_tuyen": 19,
+        "utter_hoi_co_so_vat_chat": 20,
+        "utter_hoi_chuong_trinh_dao_tao_cua_truong": 21,
+        "utter_khong_tim_thay_nganh": 22,
+        "utter_khong_tim_thay_diem_chuan": 23,
+        "utter_default": 24,
+        "action_xu_ly_ten": 25,
+        "action_nganh_tuyen_sinh": 26,
+        "action_thong_tin_gioi_thieu_nganh": 27,
+        "action_co_hoi_viec_lam_nganh": 28,
+        "action_diem_chuan_nganh": 29,
+        "action_khoi_tuyen_sinh_nganh": 30
+      },
+      "entities": {
+        "nam": 0,
+        "ten_nganh": 1,
+        "ten_nguoi_dung": 2
+      },
+      "slots": {
+        "ten_nguoi_dung_0": 0,
+        "ten_nganh_0": 1,
+        "nam_0": 2
+      },
+      "active_loop": {}
+    }
+  },
+  "remove_duplicates": true,
+  "max_history": 5
+}

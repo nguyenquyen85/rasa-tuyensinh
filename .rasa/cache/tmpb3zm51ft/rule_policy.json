@@ -1,0 +1,40 @@
+{
+  "lookup": {
+    "rules": {
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"chao_hoi\"}}]": "utter_chao_hoi",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"chao_hoi\"}}, {\"prev_action\": {\"action_name\": \"utter_chao_hoi\"}, \"user\": {\"intent\": \"chao_hoi\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"hoi_hoc_phi\"}}]": "utter_hoi_hoc_phi",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"hoi_hoc_phi\"}}, {\"prev_action\": {\"action_name\": \"utter_hoi_hoc_phi\"}, \"user\": {\"intent\": \"hoi_hoc_phi\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"hoi_phuong_thuc_xet_tuyen\"}}]": "utter_hoi_phuong_thuc_xet_tuyen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"hoi_phuong_thuc_xet_tuyen\"}}, {\"prev_action\": {\"action_name\": \"utter_hoi_phuong_thuc_xet_tuyen\"}, \"user\": {\"intent\": \"hoi_phuong_thuc_xet_tuyen\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"cam_on\"}}]": "utter_cam_on",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"cam_on\"}}, {\"prev_action\": {\"action_name\": \"utter_cam_on\"}, \"user\": {\"intent\": \"cam_on\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"tim_kiem_nganh_hoc\"}}]": "utter_tim_kiem_nganh_hoc",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"tim_kiem_nganh_hoc\"}}, {\"prev_action\": {\"action_name\": \"utter_tim_kiem_nganh_hoc\"}, \"user\": {\"intent\": \"tim_kiem_nganh_hoc\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"tam_biet\"}}]": "utter_tam_biet",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"tam_biet\"}}, {\"prev_action\": {\"action_name\": \"utter_tam_biet\"}, \"user\": {\"intent\": \"tam_biet\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"hoi_diem_chuan\"}}]": "action_tra_cuu_diem_chuan",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"hoi_diem_chuan\"}}, {\"prev_action\": {\"action_name\": \"action_tra_cuu_diem_chuan\"}, \"user\": {\"intent\": \"hoi_diem_chuan\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"nlu_fallback\"}}]": "utter_default",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"nlu_fallback\"}}, {\"prev_action\": {\"action_name\": \"utter_default\"}, \"user\": {\"intent\": \"nlu_fallback\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"hoi_chuong_trinh_dao_tao\"}}]": "utter_hoi_chuong_trinh_dao_tao",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"hoi_chuong_trinh_dao_tao\"}}, {\"prev_action\": {\"action_name\": \"utter_hoi_chuong_trinh_dao_tao\"}, \"user\": {\"intent\": \"hoi_chuong_trinh_dao_tao\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"hoi_co_so_vat_chat\"}}]": "utter_hoi_co_so_vat_chat",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"hoi_co_so_vat_chat\"}}, {\"prev_action\": {\"action_name\": \"utter_hoi_co_so_vat_chat\"}, \"user\": {\"intent\": \"hoi_co_so_vat_chat\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"hoi_khoi_tuyen_sinh\"}}]": "action_tra_cuu_khoi_tuyen_sinh",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"hoi_khoi_tuyen_sinh\"}}, {\"prev_action\": {\"action_name\": \"action_tra_cuu_khoi_tuyen_sinh\"}, \"user\": {\"intent\": \"hoi_khoi_tuyen_sinh\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"hoi_dia_diem_hoc\"}}]": "utter_hoi_dia_diem_hoc",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"hoi_dia_diem_hoc\"}}, {\"prev_action\": {\"action_name\": \"utter_hoi_dia_diem_hoc\"}, \"user\": {\"intent\": \"hoi_dia_diem_hoc\"}}]": "action_listen"
+    },
+    "rule_only_slots": [],
+    "rule_only_loops": [],
+    "rules_for_loop_unhappy_path": {},
+    "rules_not_in_stories": [
+      "predicting default action with intent restart",
+      "predicting default action with intent session_start",
+      "predicting default action with intent back",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"nlu_fallback\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"nlu_fallback\"}}, {\"prev_action\": {\"action_name\": \"utter_default\"}, \"user\": {\"intent\": \"nlu_fallback\"}}]"
+    ]
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "type": "MaxHistoryTrackerFeaturizer",
+  "state_featurizer": {
+    "action_texts": [],
+    "entity_tag_specs": [],
+    "feature_states": {
+      "intent": {
+        "back": 0,
+        "cam_on": 1,
+        "chao_hoi": 2,
+        "hoi_chuong_trinh_dao_tao_cua_truong": 3,
+        "hoi_co_so_vat_chat": 4,
+        "hoi_dia_diem_hoc": 5,
+        "hoi_diem_chuan": 6,
+        "hoi_hoc_phi": 7,
+        "hoi_khoi_tuyen_sinh": 8,
+        "hoi_phuong_thuc_xet_tuyen": 9,
+        "nganh_tuyen_sinh": 10,
+        "nhap_ten_nguoi_dung": 11,
+        "nlu_fallback": 12,
+        "out_of_scope": 13,
+        "restart": 14,
+        "session_start": 15,
+        "tam_biet": 16,
+        "thong_tin_them_ve_nganh_tuyen_sinh": 17
+      },
+      "action_name": {
+        "action_listen": 0,
+        "action_restart": 1,
+        "action_session_start": 2,
+        "action_default_fallback": 3,
+        "action_deactivate_loop": 4,
+        "action_revert_fallback_events": 5,
+        "action_default_ask_affirmation": 6,
+        "action_default_ask_rephrase": 7,
+        "action_two_stage_fallback": 8,
+        "action_unlikely_intent": 9,
+        "action_back": 10,
+        "...": 11,
+        "action_extract_slots": 12,
+        "action_luu_ten_nguoi_dung": 13,
+        "action_nganh_tuyen_sinh": 14,
+        "action_thong_tin_them_ve_nganh_tuyen_sinh": 15,
+        "action_hoi_diem_chuan": 16,
+        "action_hoi_khoi_tuyen_sinh": 17,
+        "utter_cam_on": 18,
+        "utter_chao_hoi": 19,
+        "utter_chao_sau_khi_biet_ten": 20,
+        "utter_default": 21,
+        "utter_hoi_chuong_trinh_dao_tao_cua_truong": 22,
+        "utter_hoi_co_so_vat_chat": 23,
+        "utter_hoi_dia_diem_hoc": 24,
+        "utter_hoi_hoc_phi": 25,
+        "utter_hoi_phuong_thuc_xet_tuyen": 26,
+        "utter_hoi_ten": 27,
+        "utter_nganh_khong_ton_tai": 28,
+        "utter_tam_biet": 29
+      },
+      "entities": {
+        "nam": 0,
+        "ten_nganh": 1,
+        "ten_nguoi_dung": 2
+      },
+      "slots": {
+        "ten_nguoi_dung_0": 0,
+        "ten_nganh_0": 1,
+        "nam_0": 2
+      },
+      "active_loop": {}
+    }
+  },
+  "remove_duplicates": true,
+  "max_history": 8
+}
