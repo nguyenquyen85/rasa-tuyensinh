@@ -1,4 +1,7 @@
+*.pyc
+__pycache__/
+.env
 .rasa/
-models/            
-__pycache__/       
-tests/
+.results/
+models/
+credentials.yml
