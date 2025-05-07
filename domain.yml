@@ -15,11 +15,14 @@ intents:
   - hoi_co_so_vat_chat
   - cam_on
   - tam_biet
+  - tu_van_nganh_theo_so_thich
+  - tu_van_nganh_theo_diem
 
 entities:
   - ten_nguoi_dung
   - ten_nganh
   - nam
+  - diem
 
 slots:
   ten_nguoi_dung:
@@ -42,6 +45,13 @@ slots:
     mappings:
       - type: from_entity
         entity: nam
+        
+  diem:
+    type: float
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: diem
 
 responses:
   utter_chao_hoi:
@@ -58,10 +68,10 @@ responses:
     - text: "Trường Đại học Giao thông Vận tải TP.HCM có chương trình đào tạo đa dạng với thời gian học 4-5 năm tùy ngành. Chúng tôi cũng có các chương trình liên kết quốc tế và đào tạo tiếng Anh chuyên ngành."
 
   utter_tra_loi_hoc_phi:
-    - text: "Học phí của trường dao động từ 17-20 triệu đồng/năm học tùy theo ngành học. Trường cũng có nhiều chính sách học bổng và hỗ trợ tài chính cho sinh viên."
+    - text: "Học phí của trường hiện tại năm 2024 là 400.000vnđ/tín chỉ đối với đại trà, 800.000vnđ/tín chỉ đối với chất lượng cao. Trường cũng có nhiều chính sách học bổng và hỗ trợ tài chính cho sinh viên."
 
   utter_tra_loi_dia_diem_hoc:
-    - text: "Trường có 2 cơ sở chính:\n- Cơ sở 1: Số 2 Võ Oanh, phường 25, quận Bình Thạnh, TP.HCM\n- Cơ sở 2: Số 450-451 Lê Văn Việt, phường Tăng Nhơn Phú A, TP. Thủ Đức, TP.HCM\nSinh viên năm nhất thường học tại cơ sở 2."
+    - text: "Trường có 3 cơ sở chính:\n- Cơ sở 1: 2 Võ Oanh, Phường 25, Quận Bình Thạnh, TP. Hồ Chí Minh\n-  Cơ sở 2: 10 Đường số 12, Khu phố 3, Phường An Khánh, TP. Thủ Đức, TP. Hồ Chí Minh\nCơ sở 3: 70 Tô Ký, Phường Tân Chánh Hiệp, Quận 12, TP. Hồ Chí Minh."
 
   utter_tra_loi_phuong_thuc_xet_tuyen:
     - text: "Trường có nhiều phương thức xét tuyển như:\n- Xét tuyển theo điểm thi THPT\n- Xét tuyển học bạ THPT\n- Xét tuyển thẳng (đối với học sinh giỏi, đạt giải olimpic)\n- Xét tuyển kết quả đánh giá năng lực của ĐHQG TP.HCM"
@@ -77,9 +87,17 @@ responses:
     - text: "Tạm biệt! Chúc bạn một ngày tốt lành."
     - text: "Hẹn gặp lại bạn! Chúc bạn những điều tốt đẹp nhất."
     - text: "Chào tạm biệt! Nếu cần thêm thông tin, hãy quay lại trò chuyện với tôi nhé."
+
   utter_default:
     - text: "Xin lỗi, tôi không hiểu câu hỏi của bạn. Bạn có thể hỏi lại được không?"
     - text: "Tôi không chắc về câu hỏi đó. Bạn có thể cung cấp thêm thông tin không?"
+
+  utter_hoi_ve_so_thich:
+    - text: "Bạn có thể cho tôi biết bạn thích gì hoặc có sở thích gì để tôi tư vấn ngành học phù hợp không?"
+
+  utter_hoi_ve_diem:
+    - text: "Bạn có thể cho tôi biết tổng điểm 3 môn của bạn là bao nhiêu để tôi tư vấn ngành học phù hợp?"
+
 actions:
   - action_xu_ly_ten
   - action_tra_loi_nganh_tuyen_sinh
@@ -87,6 +105,8 @@ actions:
   - action_tra_loi_co_hoi_viec_lam
   - action_tra_loi_diem_chuan_nganh
   - action_tra_loi_khoi_xet_tuyen
+  - action_tu_van_nganh_theo_so_thich
+  - action_tu_van_nganh_theo_diem
 
 session_config:
   session_expiration_time: 60

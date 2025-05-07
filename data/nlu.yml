@@ -15,6 +15,24 @@ nlu:
     - mình tên là [Tuấn Hưng](ten_nguoi_dung)
     - mình tên [Thảo](ten_nguoi_dung)
     - tôi tên [Nguyễn Tiến](ten_nguoi_dung)
+    - tôi là [Lê Thị Minh Ngọc](ten_nguoi_dung)
+    - tên của tôi là [Phạm Quốc Huy](ten_nguoi_dung)
+    - mình tên [Hoàng Anh Thư](ten_nguoi_dung)
+    - tôi tên là [Trần Văn Nam](ten_nguoi_dung)
+    - tôi là [Đỗ Thị Thanh Tâm](ten_nguoi_dung)
+    - tên tôi là [Vũ Minh Đức](ten_nguoi_dung)
+    - mình tên là [Nguyễn Thị Mai Linh](ten_nguoi_dung)
+    - tôi tên [Bùi Quang Vinh](ten_nguoi_dung)
+    - tôi là [Phan Thị Hồng Nhung](ten_nguoi_dung)
+    - tên của tôi là [Lý Văn Hùng](ten_nguoi_dung)
+    - mình tên [Đặng Thị Kim Chi](ten_nguoi_dung)
+    - tôi tên là [Hồ Văn Long](ten_nguoi_dung)
+    - tôi là [Ngô Thị Thu Hà](ten_nguoi_dung)
+    - tên tôi là [Mai Văn An](ten_nguoi_dung)
+    - mình tên là [Lương Thị Diễm Quỳnh](ten_nguoi_dung)
+    - tôi tên [Quốc Đạt](ten_nguoi_dung)
+    - tôi là [Phát Đạt](ten_nguoi_dung)
+    - tên của tôi là [Nguyễn Quyền](ten_nguoi_dung)
 - intent: hoi_chuong_trinh_dao_tao_cua_truong
   examples: |
     - chương trình đào tạo như thế nào
@@ -270,6 +288,7 @@ nlu:
   examples: |
     - học phí là bao nhiêu
     - chi phí học tập ở trường
+    - học phí của trường
 - intent: hoi_dia_diem_hoc
   examples: |
     - trường học ở đâu
@@ -310,3 +329,41 @@ nlu:
     - thư viện trường ra sao
     - có khu thực hành không
     - không gian học tập tại trường
+- intent: tu_van_nganh_theo_so_thich
+  examples: |
+    - tôi thích máy tính thì nên học ngành nào?
+    - tôi quan tâm đến ô tô, nên học ngành gì?
+    - tôi muốn làm việc với công nghệ thì nên học gì?
+    - tôi thích thiết kế và sáng tạo, nên học ngành nào?
+    - tôi thích lập trình, bạn gợi ý ngành gì?
+    - tôi muốn làm việc trong ngành vận tải, có ngành học phù hợp không?
+    - tôi có đam mê với kinh doanh thì nên chọn ngành nào?
+    - em thích làm việc với điện tử
+    - tôi có sở thích về robot
+    - em muốn theo học ngành liên quan đến logistics
+    - tôi muốn làm việc trong lĩnh vực xây dựng
+    - tôi thích nghiên cứu về công trình giao thông
+    - tôi đam mê làm việc với máy móc
+    - tôi thích làm việc với marketing và tiếp thị
+    - tôi muốn học ngành liên quan đến ngoại ngữ
+    - tôi thích học các môn liên quan đến tự động hóa
+    - em thích cơ khí và các máy móc
+
+- intent: tu_van_nganh_theo_diem
+  examples: |
+    - tôi được 24 điểm thì nên học ngành nào?
+    - nếu em được 20 điểm thì có thể học ngành gì?
+    - em thi được khoảng 26 điểm, có ngành nào phù hợp không?
+    - với điểm 19 thì có cơ hội ngành nào không?
+    - điểm 22 thì nên chọn ngành nào?
+    - nếu có 18 điểm thì nên chọn ngành gì?
+    - em được 25 điểm, gợi ý giúp ngành học phù hợp
+    - với 21 điểm thì nên học ngành gì?
+    - mình được 23 điểm có thể đậu được ngành nào?
+    - tôi đạt 24.5 điểm, tư vấn giúp tôi các ngành phù hợp
+    - em được 17 điểm, có ngành nào phù hợp không?
+    - với 20.5 điểm thì có những ngành nào phù hợp?
+    - tôi có 22.5 điểm, nên học ngành gì?
+    - 19.5 điểm thì học được ngành nào?
+    - 27 điểm thì nên học ngành gì ạ?
+    - em đạt 23 điểm có đủ đậu ngành công nghệ thông tin không?

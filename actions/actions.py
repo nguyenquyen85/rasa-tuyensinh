@@ -127,7 +127,7 @@ class ActionTraLoiNganhTuyenSinh(Action):
         # Tạo thông báo về các ngành
         message = "Trường Đại học Giao thông Vận tải TP.HCM đào tạo các ngành sau:\n"
         for i, nganh in enumerate(nganh_list, 1):
-            message += f"{i}. {nganh['ten_nganh']}\n"
+            message += f"\n{i}. {nganh['ten_nganh']}\n\n"
             
         dispatcher.utter_message(text=message)
         return []
@@ -277,3 +277,149 @@ class ActionTraLoiKhoiXetTuyen(Action):
         else:
             dispatcher.utter_message(text=f"Tôi không tìm thấy thông tin về khối xét tuyển của ngành '{ten_nganh}'. Bạn có thể kiểm tra lại tên ngành hoặc tìm hiểu về ngành khác.")
             return []
+        
+# Thêm các hàm tư vấn ngành theo điểm và sở thích
+class ActionTuVanNganhTheoDiem(Action):
+    """
+    Hành động tư vấn ngành học dựa trên điểm thi của thí sinh
+    """
+    def name(self) -> Text:
+        return "action_tu_van_nganh_theo_diem"
+        
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        # Trích xuất thông tin điểm từ tin nhắn của người dùng
+        message = tracker.latest_message.get('text', '')
+        diem_pattern = r'(\d{1,2}(\.\d+)?)\s*(?:điểm|diem)'
+        diem_matches = re.findall(diem_pattern, message)
+        
+        diem = None
+        if diem_matches:
+            try:
+                diem = float(diem_matches[0][0])
+            except (ValueError, IndexError):
+                pass
+        
+        if not diem:
+            # Tìm số điểm từ các cụm từ thông thường
+            diem_pattern = r'(\d{1,2}(\.\d+)?)'
+            diem_matches = re.findall(diem_pattern, message)
+            
+            if diem_matches:
+                try:
+                    # Lấy số điểm đầu tiên tìm thấy
+                    diem = float(diem_matches[0][0])
+                except (ValueError, IndexError):
+                    pass
+        
+        if not diem:
+            dispatcher.utter_message(text="Xin lỗi, tôi không xác định được điểm của bạn. Vui lòng cho biết tổng điểm 3 môn là bao nhiêu?")
+            return []
+        
+        # Đọc danh sách ngành từ JSON
+        nganh_list = load_nganh_data()
+        
+        if not nganh_list:
+            dispatcher.utter_message(text="Hiện tại tôi không thể cung cấp thông tin về các ngành tuyển sinh. Xin vui lòng thử lại sau.")
+            return []
+        
+        # Tư vấn dựa theo mức điểm
+        suitable_nganh = []
+        
+        # Lấy điểm chuẩn các ngành năm gần nhất
+        latest_year = "2024"  # Năm mới nhất trong dữ liệu
+        
+        for nganh in nganh_list:
+            if latest_year in nganh["diem_chuan"] and nganh["diem_chuan"][latest_year] is not None:
+                diem_chuan = nganh["diem_chuan"][latest_year]
+                
+                # Phân loại theo mức độ phù hợp
+                if diem >= diem_chuan + 2:  # Dư điểm nhiều
+                    suitable_nganh.append((nganh["ten_nganh"], diem_chuan, "rất phù hợp"))
+                elif diem >= diem_chuan:  # Đủ điểm
+                    suitable_nganh.append((nganh["ten_nganh"], diem_chuan, "phù hợp"))
+                elif diem >= diem_chuan - 2:  # Thiếu điểm không nhiều
+                    suitable_nganh.append((nganh["ten_nganh"], diem_chuan, "có thể cân nhắc"))
+        
+        # Sắp xếp theo mức độ phù hợp
+        suitable_nganh.sort(key=lambda x: (
+            0 if x[2] == "rất phù hợp" else 1 if x[2] == "phù hợp" else 2,
+            x[1]  # Sau đó sắp xếp theo điểm chuẩn để ưu tiên ngành có điểm cao hơn
+        ))
+        
+        if suitable_nganh:
+            message = f"Với {diem} điểm, bạn có thể tham khảo các ngành sau:\n\n"
+            
+            for i, (ten_nganh, diem_chuan, muc_do) in enumerate(suitable_nganh[:5], 1):
+                message += f"{i}. {ten_nganh} (điểm chuẩn: {diem_chuan}) - {muc_do}\n"
+                
+            message += "\nBạn có muốn biết thêm thông tin về ngành nào trong số này không?"
+        else:
+            message = f"Với mức điểm {diem}, bạn có thể cân nhắc các ngành có điểm chuẩn thấp hơn hoặc cân nhắc các phương thức xét tuyển khác như xét học bạ hoặc đánh giá năng lực."
+        
+        dispatcher.utter_message(text=message)
+        return []
+
+class ActionTuVanNganhTheoSoThich(Action):
+    """
+    Hành động tư vấn ngành học dựa trên sở thích của thí sinh
+    """
+    def name(self) -> Text:
+        return "action_tu_van_nganh_theo_so_thich"
+        
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        # Lấy tin nhắn chứa sở thích của người dùng
+        message = tracker.latest_message.get('text', '').lower()
+        
+        # Từ khóa ánh xạ sở thích với ngành học
+        so_thich_nganh_mapping = {
+            "máy tính": ["Công nghệ thông tin", "Kỹ thuật phần mềm", "Hệ thống thông tin", "An toàn thông tin"],
+            "lập trình": ["Công nghệ thông tin", "Kỹ thuật phần mềm", "Khoa học máy tính"],
+            "thiết kế": ["Kiến trúc", "Kỹ thuật công trình", "Thiết kế công nghiệp"],
+            "ô tô": ["Công nghệ kỹ thuật ô tô", "Kỹ thuật cơ khí động lực"],
+            "xe máy": ["Công nghệ kỹ thuật ô tô", "Kỹ thuật cơ khí động lực"],
+            "động cơ": ["Công nghệ kỹ thuật ô tô", "Kỹ thuật cơ khí động lực"],
+            "điện": ["Công nghệ kỹ thuật điện, điện tử", "Công nghệ kỹ thuật điều khiển và tự động hóa"],
+            "điện tử": ["Công nghệ kỹ thuật điện, điện tử", "Công nghệ kỹ thuật điều khiển và tự động hóa"],
+            "tự động hóa": ["Công nghệ kỹ thuật điều khiển và tự động hóa"],
+            "robot": ["Công nghệ kỹ thuật điều khiển và tự động hóa", "Công nghệ kỹ thuật cơ điện tử"],
+            "cơ khí": ["Công nghệ kỹ thuật cơ khí", "Công nghệ chế tạo máy"],
+            "máy móc": ["Công nghệ kỹ thuật cơ khí", "Công nghệ chế tạo máy"],
+            "công trình": ["Kỹ thuật xây dựng", "Kỹ thuật xây dựng công trình giao thông"],
+            "xây dựng": ["Kỹ thuật xây dựng", "Kỹ thuật xây dựng công trình giao thông"],
+            "cầu đường": ["Kỹ thuật xây dựng công trình giao thông"],
+            "giao thông": ["Kỹ thuật xây dựng công trình giao thông", "Quy hoạch và quản lý giao thông"],
+            "vận tải": ["Logistics và hạ tầng giao thông", "Quy hoạch và quản lý giao thông"],
+            "logistics": ["Logistics và hạ tầng giao thông"],
+            "kinh doanh": ["Quản trị kinh doanh", "Marketing", "Thương mại điện tử"],
+            "quản lý": ["Quản trị kinh doanh", "Quản trị nhân lực"],
+            "marketing": ["Marketing", "Thương mại điện tử"],
+            "tiếng anh": ["Ngôn ngữ Anh"],
+            "ngoại ngữ": ["Ngôn ngữ Anh"]
+        }
+        
+        # Tìm các từ khóa liên quan đến sở thích trong tin nhắn
+        matched_interests = []
+        for keyword, nganh_list in so_thich_nganh_mapping.items():
+            if keyword in message:
+                matched_interests.extend(nganh_list)
+        
+        # Loại bỏ các ngành trùng lặp và lấy tối đa 5 ngành
+        recommended_nganh = list(dict.fromkeys(matched_interests))[:5]
+        
+        if recommended_nganh:
+            message = "Dựa trên sở thích của bạn, tôi gợi ý các ngành sau:\n\n"
+            for i, nganh in enumerate(recommended_nganh, 1):
+                message += f"{i}. {nganh}\n"
+                
+            message += "\nBạn có muốn biết thêm thông tin về ngành nào trong số này không?"
+        else:
+            message = "Tôi chưa xác định được sở thích rõ ràng của bạn. Bạn có thể cho tôi biết bạn thích gì hoặc quan tâm đến lĩnh vực nào không?"
+        
+        dispatcher.utter_message(text=message)
+        return []

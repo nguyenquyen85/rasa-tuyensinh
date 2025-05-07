@@ -71,3 +71,13 @@ rules:
     steps:
       - intent: tam_biet
       - action: utter_tam_biet
+
+  - rule: Tư vấn ngành theo sở thích
+    steps:
+      - intent: tu_van_nganh_theo_so_thich
+      - action: action_tu_van_nganh_theo_so_thich
+
+  - rule: Tư vấn ngành theo điểm
+    steps:
+      - intent: tu_van_nganh_theo_diem
+      - action: action_tu_van_nganh_theo_diem

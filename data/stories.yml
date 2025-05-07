@@ -117,3 +117,90 @@ stories:
       - action: action_tra_loi_khoi_xet_tuyen
       - intent: cam_on
       - action: utter_cam_on
+
+  - story: Tư vấn ngành theo sở thích
+    steps:
+      - intent: chao_hoi
+      - action: utter_chao_hoi
+      - action: utter_hoi_ten
+      - intent: nhap_ten
+        entities:
+          - ten_nguoi_dung: "Anh Tuấn"
+      - action: action_xu_ly_ten
+      - intent: tu_van_nganh_theo_so_thich
+      - action: action_tu_van_nganh_theo_so_thich
+      - intent: hoi_thong_tin_gioi_thieu_chung_cua_nganh
+        entities:
+          - ten_nganh: "Công nghệ thông tin"
+      - action: action_tra_loi_thong_tin_nganh
+      - intent: cam_on
+      - action: utter_cam_on
+      - intent: tam_biet
+      - action: utter_tam_biet
+
+  - story: Tư vấn ngành theo điểm số
+    steps:
+      - intent: chao_hoi
+      - action: utter_chao_hoi
+      - action: utter_hoi_ten
+      - intent: nhap_ten
+        entities:
+          - ten_nguoi_dung: "Mai Linh"
+      - action: action_xu_ly_ten
+      - intent: tu_van_nganh_theo_diem
+        entities:
+          - diem: 24.5
+      - action: action_tu_van_nganh_theo_diem
+      - intent: hoi_diem_chuan_cua_nganh
+        entities:
+          - ten_nganh: "Logistics và quản lý chuỗi cung ứng"
+          - nam: "năm 2024"
+      - action: action_tra_loi_diem_chuan_nganh
+      - intent: cam_on
+      - action: utter_cam_on
+
+  - story: Hỏi liên tiếp về nhiều ngành
+    steps:
+      - intent: chao_hoi
+      - action: utter_chao_hoi
+      - action: utter_hoi_ten
+      - intent: nhap_ten
+        entities:
+          - ten_nguoi_dung: "Quốc Huy"
+      - action: action_xu_ly_ten
+      - intent: hoi_thong_tin_gioi_thieu_chung_cua_nganh
+        entities:
+          - ten_nganh: "Kỹ thuật điều khiển và tự động hóa"
+      - action: action_tra_loi_thong_tin_nganh
+      - intent: hoi_co_hoi_viec_lam_cua_nganh
+        entities:
+          - ten_nganh: "Kỹ thuật điều-controls và tự động hóa"
+      - action: action_tra_loi_co_hoi_viec_lam
+      - intent: hoi_thong_tin_gioi_thieu_chung_cua_nganh
+        entities:
+          - ten_nganh: "Công nghệ kỹ thuật ô tô"
+      - action: action_tra_loi_thong_tin_nganh
+      - intent: hoi_khoi_tuyen_sinh_cua_nganh
+        entities:
+          - ten_nganh: "Công nghệ kỹ thuật ô tô"
+      - action: action_tra_loi_khoi_xet_tuyen
+      - intent: tam_biet
+      - action: utter_tam_biet
+
+  - story: Hỏi về cơ sở vật chất và phương thức xét tuyển
+    steps:
+      - intent: chao_hoi
+      - action: utter_chao_hoi
+      - action: utter_hoi_ten
+      - intent: nhap_ten
+        entities:
+          - ten_nguoi_dung: "Thanh Tâm"
+      - action: action_xu_ly_ten
+      - intent: hoi_co_so_vat_chat
+      - action: utter_tra_loi_co_so_vat_chat
+      - intent: hoi_phuong_thuc_xet_tuyen
+      - action: utter_tra_loi_phuong_thuc_xet_tuyen
+      - intent: cam_on
+      - action: utter_cam_on
+      - intent: tam_biet
+      - action: utter_tam_biet

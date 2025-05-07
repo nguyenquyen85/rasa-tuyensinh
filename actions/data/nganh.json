@@ -2,7 +2,7 @@
   {
     "ma_nganh": "7510201",
     "ten_nganh": "Công nghệ kỹ thuật cơ khí",
-    "gioi_thieu_chung": "Ngành CÔNG NGHỆ KỸ THUẬT CƠ KHÍ đào tạo theo định hướng ứng dụng, đào tạo người học có phẩm chất chính trị, đạo đức nghề nghiệp và sức khỏe tốt. Chương trình cũng được thiết kế để người học có các kiến thức cơ bản về chính trị, khoa học tự nhiên và xã hội để vận dụng tốt vào thực tế, chế tạo hoặc khai thác hiệu quả các thiết bị trong lĩnh vực cơ khí nói chung và trong các lĩnh vực về xếp dỡ hàng hóa, vận tải logictics,… Người học sau khi hoàn thành chương trình còn khả năng làm việc độc lập, sáng tạo; năng lực tổ chức và điều hành hoạt động tổ chức sản xuất; có ý thức tự học, tự nâng cao trình độ, trách nhiệm xã hội và hòa nhập môi trường lao động đa quốc gia.",
+    "gioi_thieu_chung": "Ngành **Công nghệ Kỹ thuật Cơ khí** tại Trường Đại học Giao thông Vận tải TP.HCM được thiết kế để đào tạo cử nhân có khả năng thiết kế, chế tạo, vận hành và bảo trì các hệ thống cơ khí trong sản xuất công nghiệp. Sinh viên sẽ được trang bị kiến thức về cơ học, vật liệu, công nghệ chế tạo, tự động hóa và các phần mềm thiết kế kỹ thuật.\n\nSinh viên sau khi tốt nghiệp có khả năng:\n\n✔️ Thiết kế và chế tạo các chi tiết, cụm chi tiết cơ khí.\n\n✔️ Vận hành và bảo trì các thiết bị, hệ thống cơ khí trong sản xuất.\n\n✔️ Sử dụng thành thạo các phần mềm thiết kế kỹ thuật như AutoCAD, SolidWorks.\n\n✔️ Quản lý và điều hành các dây chuyền sản xuất cơ khí.\n\n✔️ Nghiên cứu và ứng dụng các công nghệ mới trong lĩnh vực cơ khí.",
     "co_hoi_viec_lam": [
       "Tổ chức sản xuất và quản lý, điều hành, giám sát quá trình công nghệ chế tạo và lắp đặt các thiết bị dùng trong lĩnh vực logistics và khai thác cảng sông, cảng biển, cảng cạn",
       "Có thể công tác tại các doanh nghiệp làm dịch vụ cảng biển, cảng sông cụ thể các chuyên môn: kế hoạch kinh doanh, kiểm toán, pháp chế, kỹ thuật – vật tư",
@@ -14,15 +14,16 @@
     ],
     "khoi_xet_tuyen": [
       "A00",
-      "C00",
-      "D00"
+      "A01",
+      "D01",
+      "D07"
     ],
     "diem_chuan": {
-      "2020": 18.0,
-      "2021": 19.0,
-      "2022": 20.0,
-      "2023": 21.0,
-      "2024": 22.0
+      "2020": null,
+      "2021": null,
+      "2022": null,
+      "2023": null,
+      "2024": 23.0
     }
   },
   {
@@ -39,8 +40,8 @@
     ],
     "khoi_xet_tuyen": [
       "A00",
-      "C00",
-      "D00"
+      "A01",
+      "D07"
     ],
     "diem_chuan": {
       "2020": 18.0,
@@ -71,8 +72,9 @@
     ],
     "khoi_xet_tuyen": [
       "A00",
-      "C00",
-      "D00"
+      "A01",
+      "D01",
+      "D07"
     ],
     "diem_chuan": {
       "2020": null,
@@ -97,9 +99,10 @@
       "Học nâng cao trình độ thạc sĩ/ tiến sĩ hoặc chuyên sâu theo chuyên ngành; hoặc liên thông văn bằng hai với các ngành khác."
     ],
     "khoi_xet_tuyen": [
-      "A16",
       "A00",
-      "A01"
+      "A01",
+      "D01",
+      "D07"
     ],
     "diem_chuan": {
       "2020": 23.8,
@@ -125,7 +128,7 @@
     "khoi_xet_tuyen": [
       "A00",
       "A01",
-      "D01"
+      "D07"
     ],
     "diem_chuan": {
       "2020": 20.5,
@@ -145,7 +148,8 @@
     "khoi_xet_tuyen": [
       "A00",
       "A01",
-      "D01"
+      "D01",
+      "D07"
     ],
     "diem_chuan": {
       "2020": null,
@@ -196,7 +200,8 @@
     "khoi_xet_tuyen": [
       "A00",
       "A01",
-      "D01"
+      "D01",
+      "D07"
     ],
     "diem_chuan": {
       "2020": 20.5,
@@ -244,7 +249,8 @@
     "khoi_xet_tuyen": [
       "A00",
       "A01",
-      "D01"
+      "D01",
+      "D07"
     ],
     "diem_chuan": {
       "2020": 19.5,
@@ -268,7 +274,8 @@
     "khoi_xet_tuyen": [
       "A00",
       "A01",
-      "D01"
+      "D01",
+      "D07"
     ],
     "diem_chuan": {
       "2020": 20.0,
@@ -292,7 +299,8 @@
     "khoi_xet_tuyen": [
       "A00",
       "A01",
-      "D01"
+      "D01",
+      "D07"
     ],
     "diem_chuan": {
       "2020": 18.5,
@@ -317,7 +325,8 @@
     "khoi_xet_tuyen": [
       "A00",
       "A01",
-      "D01"
+      "D01",
+      "D07"
     ],
     "diem_chuan": {
       "2020": 18.0,
@@ -365,7 +374,7 @@
     "khoi_xet_tuyen": [
       "A00",
       "A01",
-      "D01"
+      "D07"
     ],
     "diem_chuan": {
       "2020": 20.0,
@@ -388,8 +397,9 @@
     ],
     "khoi_xet_tuyen": [
       "A00",
-      "A01",
-      "D01"
+      "B00",
+      "D01",
+      "D07"
     ],
     "diem_chuan": {
       "2020": 19.5,
@@ -413,7 +423,8 @@
     "khoi_xet_tuyen": [
       "A00",
       "A01",
-      "D01"
+      "D01",
+      "D07"
     ],
     "diem_chuan": {
       "2020": 18.5,
@@ -437,7 +448,8 @@
     "khoi_xet_tuyen": [
       "A00",
       "A01",
-      "D01"
+      "D01",
+      "D07"
     ],
     "diem_chuan": {
       "2020": 18.5,
