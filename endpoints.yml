@@ -15,7 +15,7 @@
 #   url: "http://localhost:5055/webhook"
 
 action_endpoint:
-  url: "https://rasa-tuyensinh.onrender.com/webhooks/rest/webhook"
+  url: "https://rasa-tuyensinh.onrender.com/webhooks"
 
 
 # Tracker store which is used to store the conversations.
