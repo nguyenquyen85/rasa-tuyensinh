@@ -19,7 +19,6 @@ __pycache__/
 *.db
 *.sqlite
 *.h5
-*.tar.gz
 
 # Ignore configuration files that contain sensitive data (credentials)
 credentials.yml
