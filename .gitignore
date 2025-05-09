@@ -19,7 +19,3 @@ __pycache__/
 *.db
 *.sqlite
 *.h5
-
-# Ignore configuration files that contain sensitive data (credentials)
-credentials.yml
-endpoints.yml
