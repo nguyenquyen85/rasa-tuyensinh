@@ -19,3 +19,5 @@ __pycache__/
 *.db
 *.sqlite
 *.h5
+models/
+*.tar.gz
