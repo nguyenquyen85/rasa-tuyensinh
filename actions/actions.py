@@ -352,7 +352,7 @@ class ActionTuVanNganhTheoDiem(Action):
         if suitable_nganh:
             message = f"Với {diem} điểm, bạn có thể tham khảo các ngành sau:\n\n"
             
-            for i, (ten_nganh, diem_chuan, muc_do) in enumerate(suitable_nganh[:5], 1):
+            for i, (ten_nganh, diem_chuan, muc_do) in enumerate(suitable_nganh[:10], 1):
                 message += f"{i}. {ten_nganh} (điểm chuẩn: {diem_chuan}) - {muc_do}\n"
                 
             message += "\nBạn có muốn biết thêm thông tin về ngành nào trong số này không?"
