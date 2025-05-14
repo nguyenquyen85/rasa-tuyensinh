@@ -1,0 +1,26 @@
+services:
+  rasa:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "0.0.0.0:5005:5005"
+    volumes:
+      - .:/app
+    depends_on:
+      - action_server
+    networks:
+      - rasa-network
+  action_server:
+    build:
+      context: .
+      dockerfile: actions/Dockerfile
+    ports:
+      - "0.0.0.0:5055:5055"
+    volumes:
+      - ./actions:/app
+    networks:
+      - rasa-network
+networks:
+  rasa-network:
+    driver: bridge
