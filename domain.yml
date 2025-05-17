@@ -17,12 +17,14 @@ intents:
   - tam_biet
   - tu_van_nganh_theo_so_thich
   - tu_van_nganh_theo_diem
+  - tu_van_theo_mon_va_diem
 
 entities:
   - ten_nguoi_dung
   - ten_nganh
   - nam
   - diem
+  - mon_hoc
 
 slots:
   ten_nguoi_dung:
@@ -52,6 +54,13 @@ slots:
     mappings:
       - type: from_entity
         entity: diem
+        
+  mon_hoc:
+    type: list
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: mon_hoc
 
 responses:
   utter_chao_hoi:
@@ -97,6 +106,9 @@ responses:
 
   utter_hoi_ve_diem:
     - text: "Bạn có thể cho tôi biết tổng điểm 3 môn của bạn là bao nhiêu để tôi tư vấn ngành học phù hợp?"
+    
+  utter_hoi_ve_diem_mon:
+    - text: "Bạn có thể cho tôi biết điểm các môn cụ thể không? Ví dụ: Toán 8.5, Lý 7, Hóa 8."
 
 actions:
   - action_xu_ly_ten
@@ -107,6 +119,7 @@ actions:
   - action_tra_loi_khoi_xet_tuyen
   - action_tu_van_nganh_theo_so_thich
   - action_tu_van_nganh_theo_diem
+  - action_tu_van_theo_mon_va_diem
 
 session_config:
   session_expiration_time: 60

@@ -204,3 +204,26 @@ stories:
       - action: utter_cam_on
       - intent: tam_biet
       - action: utter_tam_biet
+
+  - story: Tư vấn ngành theo môn và điểm
+    steps:
+      - intent: chao_hoi
+      - action: utter_chao_hoi
+      - action: utter_hoi_ten
+      - intent: nhap_ten
+        entities:
+          - ten_nguoi_dung: "Văn Hùng"
+      - action: action_xu_ly_ten
+      - intent: tu_van_theo_mon_va_diem
+        entities:
+          - mon_hoc: ["Toán", "Lý", "Hóa"]
+          - diem: [8.5, 7.5, 8.0]
+      - action: action_tu_van_theo_mon_va_diem
+      - intent: hoi_thong_tin_gioi_thieu_chung_cua_nganh
+        entities:
+          - ten_nganh: "Công nghệ thông tin"
+      - action: action_tra_loi_thong_tin_nganh
+      - intent: cam_on
+      - action: utter_cam_on
+      - intent: tam_biet
+      - action: utter_tam_biet

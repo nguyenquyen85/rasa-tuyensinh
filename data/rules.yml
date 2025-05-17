@@ -81,3 +81,7 @@ rules:
     steps:
       - intent: tu_van_nganh_theo_diem
       - action: action_tu_van_nganh_theo_diem
+  - rule: Tư vấn ngành theo môn và điểm
+    steps:
+      - intent: tu_van_theo_mon_va_diem
+      - action: action_tu_van_theo_mon_va_diem
