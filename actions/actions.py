@@ -45,40 +45,221 @@ def find_similar_nganh(nganh_name, nganh_list, threshold=60):
     # Ánh xạ từ viết tắt sang tên đầy đủ
     viet_tat_mapping = {
         # Các từ viết tắt chung
-        "cntt": "công nghệ thông tin",
-        "ktpm": "kỹ thuật phần mềm",
-        "httt": "hệ thống thông tin",
-        "attt": "an toàn thông tin",
-        "ktmt": "kỹ thuật máy tính",
-        "khmt": "khoa học máy tính",
-        "khdl": "khoa học dữ liệu",
-        "kt": "kỹ thuật",
-        "cn": "công nghệ",
-        "oto": "ô tô",
-        "dc": "động cơ",
-        "dt": "điện tử",
-        "dtvt": "điện tử viễn thông",
-        "tdhvđk": "tự động hóa và điều khiển",
-        "tdh": "tự động hóa",
-        "ck": "cơ khí",
-        "cdt": "cơ điện tử",
-        "ctm": "chế tạo máy",
-        "xd": "xây dựng",
-        "ktxd": "kỹ thuật xây dựng",
-        "cdgt": "công trình giao thông",
-        "gt": "giao thông",
-        "vt": "vận tải",
-        "log": "Logistics và Quản lý chuỗi cung ứng",
-        "qtkd": "quản trị kinh doanh",
-        "qtdn": "quản trị doanh nghiệp",
-        "mkt": "marketing",
-        "tmdt": "thương mại điện tử",
-        "qtns": "quản trị nhân sự",
-        "qtnl": "quản trị nhân lực",
-        "qldt": "quản lý đô thị",
-        "tckt": "tài chính kế toán",
-        "tc": "tài chính",
-        "kt": "kế toán"
+    # 1. Công nghệ kỹ thuật cơ khí
+        "cnktck": "Công nghệ kỹ thuật cơ khí",
+        "cnkt cokhi": "Công nghệ kỹ thuật cơ khí",
+        "cokhi": "Công nghệ kỹ thuật cơ khí",
+        "ky thuat cokhi": "Công nghệ kỹ thuật cơ khí",
+        "cnkt coki": "Công nghệ kỹ thuật cơ khí",  # gõ sai
+        "cmktck": "Công nghệ kỹ thuật cơ khí",    # gõ sai (m gần n)
+        "cnktckh": "Công nghệ kỹ thuật cơ khí",   # gõ thiếu
+        "cong nghe ky thuat co khi": "Công nghệ kỹ thuật cơ khí",  # không dấu
+
+        # 2. Công nghệ kỹ thuật điều khiển và tự động hóa
+        "cnktdktdh": "Công nghệ kỹ thuật điều khiển và tự động hóa",
+        "dktdh": "Công nghệ kỹ thuật điều khiển và tự động hóa",
+        "cnkt dktdh": "Công nghệ kỹ thuật điều khiển và tự động hóa",
+        "tudonghoa": "Công nghệ kỹ thuật điều khiển và tự động hóa",
+        "dieukhientudonghoa": "Công nghệ kỹ thuật điều khiển và tự động hóa",
+        "cnkt dkt": "Công nghệ kỹ thuật điều khiển và tự động hóa",  # gõ thiếu
+        "cmktdktdh": "Công nghệ kỹ thuật điều khiển và tự động hóa",  # gõ sai
+        "cong nghe ky thuat dieu khien va tu dong hoa": "Công nghệ kỹ thuật điều khiển và tự động hóa",
+
+        # 3. Ngành công nghệ kỹ thuật giao thông
+        "cnktgt": "Ngành công nghệ kỹ thuật giao thông",
+        "ky thuat giaothong": "Ngành công nghệ kỹ thuật giao thông",
+        "cnkt giaothong": "Ngành công nghệ kỹ thuật giao thông",
+        "giaothong": "Ngành công nghệ kỹ thuật giao thông",
+        "cnkt gt": "Ngành công nghệ kỹ thuật giao thông",  # gõ thiếu
+        "cmktgt": "Ngành công nghệ kỹ thuật giao thông",  # gõ sai
+        "cong nghe ky thuat giao thong": "Ngành công nghệ kỹ thuật giao thông",
+
+        # 4. Công nghệ kỹ thuật ô tô
+        "cnktot": "Công nghệ kỹ thuật ô tô",
+        "ky thuat oto": "Công nghệ kỹ thuật ô tô",
+        "cnkt oto": "Công nghệ kỹ thuật ô tô",
+        "oto": "Công nghệ kỹ thuật ô tô",
+        "cnkt ot": "Công nghệ kỹ thuật ô tô",  # gõ thiếu
+        "cmktot": "Công nghệ kỹ thuật ô tô",  # gõ sai
+        "cong nghe ky thuat o to": "Công nghệ kỹ thuật ô tô",
+
+        # 5. Công nghệ thông tin
+        "cntt": "Công nghệ thông tin",
+        "it": "Công nghệ thông tin",
+        "congnghethongtin": "Công nghệ thông tin",
+        "cn thongtin": "Công nghệ thông tin",
+        "cmtt": "Công nghệ thông tin",  # gõ sai
+        "cnt": "Công nghệ thông tin",   # gõ thiếu
+        "cong nghe thong tin": "Công nghệ thông tin",
+
+        # 6. Ngành Hệ Thống Thông Tin Quản Lý
+        "httql": "Ngành Hệ Thống Thông Tin Quản Lý",
+        "hethongthongtin": "Ngành Hệ Thống Thông Tin Quản Lý",
+        "thongtin quanly": "Ngành Hệ Thống Thông Tin Quản Lý",
+        "ht thongtinql": "Ngành Hệ Thống Thông Tin Quản Lý",  # gõ thiếu
+        "httqlh": "Ngành Hệ Thống Thông Tin Quản Lý",  # gõ sai
+        "he thong thong tin quan ly": "Ngành Hệ Thống Thông Tin Quản Lý",
+
+        # 7. Ngành khai thác vận tải
+        "ktvt": "Ngành khai thác vận tải",
+        "khaithac vantai": "Ngành khai thác vận tải",
+        "vantai": "Ngành khai thác vận tải",
+        "kt vantai": "Ngành khai thác vận tải",  # gõ thiếu
+        "ktvtt": "Ngành khai thác vận tải",  # gõ sai
+        "khai thac van tai": "Ngành khai thác vận tải",
+
+        # 8. Khoa học dữ liệu
+        "khdl": "Khoa học dữ liệu",
+        "khoahocdulieu": "Khoa học dữ liệu",
+        "dulieu": "Khoa học dữ liệu",
+        "kh dulieu": "Khoa học dữ liệu",  # gõ thiếu
+        "khdll": "Khoa học dữ liệu",  # gõ sai
+        "khoa hoc du lieu": "Khoa học dữ liệu",
+
+        # 9. Khoa học Hàng hải
+        "khhh": "Khoa học Hàng hải",
+        "khoahochanghai": "Khoa học Hàng hải",
+        "hanghai": "Khoa học Hàng hải",
+        "kh hanghai": "Khoa học Hàng hải",  # gõ thiếu
+        "khhah": "Khoa học Hàng hải",  # gõ sai
+        "khoa hoc hang hai": "Khoa học Hàng hải",
+
+        # 10. Kinh tế Vận tải
+        "ktvt": "Kinh tế Vận tải",
+        "kinhte vantai": "Kinh tế Vận tải",
+        "kt vantai": "Kinh tế Vận tải",
+        "kinh te van tai": "Kinh tế Vận tải",
+        "ktvtt": "Kinh tế Vận tải",  # gõ sai
+        "kt vt": "Kinh tế Vận tải",  # gõ thiếu
+
+        # 11. Kinh tế Xây dựng
+        "ktxd": "Kinh tế Xây dựng",
+        "kinhte xaydung": "Kinh tế Xây dựng",
+        "kt xaydung": "Kinh tế Xây dựng",
+        "kinh te xay dung": "Kinh tế Xây dựng",
+        "ktxdd": "Kinh tế Xây dựng",  # gõ sai
+        "kt xd": "Kinh tế Xây dựng",  # gõ thiếu
+
+        # 12. Kỹ thuật Cơ khí
+        "ktck": "Kỹ thuật Cơ khí",
+        "kythuat cokhi": "Kỹ thuật Cơ khí",
+        "cokhi": "Kỹ thuật Cơ khí",
+        "kt cokhi": "Kỹ thuật Cơ khí",  # gõ thiếu
+        "ktchk": "Kỹ thuật Cơ khí",  # gõ sai
+        "ky thuat co khi": "Kỹ thuật Cơ khí",
+
+        # 13. Kỹ thuật Điện
+        "ktd": "Kỹ thuật Điện",
+        "kythuat dien": "Kỹ thuật Điện",
+        "dien": "Kỹ thuật Điện",
+        "kt dien": "Kỹ thuật Điện",  # gõ thiếu
+        "ktdd": "Kỹ thuật Điện",  # gõ sai
+        "ky thuat dien": "Kỹ thuật Điện",
+
+        # 14. Kỹ thuật điện, điện tử và điều khiển
+        "ktddt": "Kỹ thuật điện, điện tử và điều khiển",
+        "kythuat diendientu": "Kỹ thuật điện, điện tử và điều khiển",
+        "diendientu dieukhien": "Kỹ thuật điện, điện tử và điều khiển",
+        "kt diendientu": "Kỹ thuật điện, điện tử và điều khiển",  # gõ thiếu
+        "ktddtt": "Kỹ thuật điện, điện tử và điều khiển",  # gõ sai
+        "ky thuat dien dien tu va dieu khien": "Kỹ thuật điện, điện tử và điều khiển",
+
+        # 15. Kỹ thuật Điều khiển và Tự động hóa
+        "ktdktdh": "Kỹ thuật Điều khiển và Tự động hóa",
+        "kythuat dktdh": "Kỹ thuật Điều khiển và Tự động hóa",
+        "tudonghoa": "Kỹ thuật Điều khiển và Tự động hóa",
+        "kt dktdh": "Kỹ thuật Điều khiển và Tự động hóa",  # gõ thiếu
+        "ktdktdhh": "Kỹ thuật Điều khiển và Tự động hóa",  # gõ sai
+        "ky thuat dieu khien va tu dong hoa": "Kỹ thuật Điều khiển và Tự động hóa",
+
+        # 16. Kỹ thuật Môi trường
+        "ktmt": "Kỹ thuật Môi trường",
+        "kythuat moitruong": "Kỹ thuật Môi trường",
+        "moitruong": "Kỹ thuật Môi trường",
+        "kt moitruong": "Kỹ thuật Môi trường",  # gõ thiếu
+        "ktmtt": "Kỹ thuật Môi trường",  # gõ sai
+        "ky thuat moi truong": "Kỹ thuật Môi trường",
+
+        # 17. Kỹ thuật Ô tô
+        "ktot": "Kỹ thuật Ô tô",
+        "kythuat oto": "Kỹ thuật Ô tô",
+        "oto": "Kỹ thuật Ô tô",
+        "kt oto": "Kỹ thuật Ô tô",  # gõ thiếu
+        "ktott": "Kỹ thuật Ô tô",  # gõ sai
+        "ky thuat o to": "Kỹ thuật Ô tô",
+
+        # 18. Kỹ thuật Tàu thủy
+        "kttt": "Kỹ thuật Tàu thủy",
+        "kythuat tauthuy": "Kỹ thuật Tàu thủy",
+        "tauthuy": "Kỹ thuật Tàu thủy",
+        "kt tauthuy": "Kỹ thuật Tàu thủy",  # gõ thiếu
+        "ktttt": "Kỹ thuật Tàu thủy",  # gõ sai
+        "ky thuat tau thuy": "Kỹ thuật Tàu thủy",
+
+        # 19. Kỹ thuật Xây dựng
+        "ktxd": "Kỹ thuật Xây dựng",
+        "kythuat xaydung": "Kỹ thuật Xây dựng",
+        "xaydung": "Kỹ thuật Xây dựng",
+        "kt xaydung": "Kỹ thuật Xây dựng",  # gõ thiếu
+        "ktxdd": "Kỹ thuật Xây dựng",  # gõ sai
+        "ky thuat xay dung": "Kỹ thuật Xây dựng",
+
+        # 20. Kỹ thuật Xây dựng công trình giao thông
+        "ktxdctgt": "Kỹ thuật Xây dựng công trình giao thông",
+        "kythuat xaydung giaothong": "Kỹ thuật Xây dựng công trình giao thông",
+        "xaydung giaothong": "Kỹ thuật Xây dựng công trình giao thông",
+        "kt xdctgt": "Kỹ thuật Xây dựng công trình giao thông",  # gõ thiếu
+        "ktxdctgtt": "Kỹ thuật Xây dựng công trình giao thông",  # gõ sai
+        "ky thuat xay dung cong trinh giao thong": "Kỹ thuật Xây dựng công trình giao thông",
+
+        # 21. Kinh tế xây dựng (trùng tên với số 11, giữ nguyên)
+        "ktxd": "Kinh tế Xây dựng",
+        "kinhte xaydung": "Kinh tế Xây dựng",
+        "kt xaydung": "Kinh tế Xây dựng",
+        "kinh te xay dung": "Kinh tế Xây dựng",
+        "ktxdd": "Kinh tế Xây dựng",  # gõ sai
+        "kt xd": "Kinh tế Xây dựng",  # gõ thiếu
+
+        # 22. Logistics và Quản lý chuỗi cung ứng
+        "logistics": "Logistics và Quản lý chuỗi cung ứng",
+        "qlccu": "Logistics và Quản lý chuỗi cung ứng",
+        "quanly chuoicungung": "Logistics và Quản lý chuỗi cung ứng",
+        "logistics chuoicungung": "Logistics và Quản lý chuỗi cung ứng",
+        "ql ccu": "Logistics và Quản lý chuỗi cung ứng",  # gõ thiếu
+        "logistisc": "Logistics và Quản lý chuỗi cung ứng",  # gõ sai
+        "logistics va quan ly chuoi cung ung": "Logistics và Quản lý chuỗi cung ứng",
+        "logi": "Logistics và Quản lý chuỗi cung ứng",  # không dấu
+        "logist": "Logistics và Quản lý chuỗi cung ứng",  # không dấu
+
+        # 23. Luật
+        "luat": "Luật",
+        "phapluat": "Luật",
+        "luatt": "Luật",  # gõ sai
+        "lut": "Luật",    # gõ thiếu
+        "luat": "Luật",   # không dấu
+
+        # 24. Mạng máy tính và Truyền thông dữ liệu
+        "mmt": "Mạng máy tính và Truyền thông dữ liệu",
+        "mangmaytinh": "Mạng máy tính và Truyền thông dữ liệu",
+        "truyenthong dulieu": "Mạng máy tính và Truyền thông dữ liệu",
+        "mmt dulieu": "Mạng máy tính và Truyền thông dữ liệu",  # gõ thiếu
+        "mmtt": "Mạng máy tính và Truyền thông dữ liệu",  # gõ sai
+        "mang may tinh va truyen thong du lieu": ".ạng máy tính và Truyền thông dữ liệu",
+
+        # 25. Ngôn ngữ Anh
+        "nnanh": "Ngôn ngữ Anh",
+        "anh": "Ngôn ngữ Anh",
+        "tienganh": "Ngôn ngữ Anh",
+        "nn anh": "Ngôn ngữ Anh",  # gõ thiếu
+        "nna": "Ngôn ngữ Anh",    # gõ sai
+        "ngon ngu anh": "Ngôn ngữ Anh",
+
+        # 26. Quản lý Xây dựng
+        "qlxd": "Quản lý Xây dựng",
+        "quanly xaydung": "Quản lý Xây dựng",
+        "ql xaydung": "Quản lý Xây dựng",  # gõ thiếu
+        "qlxdd": "Quản lý Xây dựng",  # gõ sai
+        "quan ly xay dung": "Quản lý Xây dựng",
     }
     
     # Xử lý viết tắt: kiểm tra xem nganh_name có phải là viết tắt không
@@ -131,36 +312,7 @@ def find_similar_nganh(nganh_name, nganh_list, threshold=60):
     if best_score >= threshold:
         return nganh_mapping[best_match]
     
-    # Xử lý trường hợp người dùng nhập tên ngành bằng tiếng Anh
-    english_mapping = {
-        "information technology": "công nghệ thông tin",
-        "software engineering": "kỹ thuật phần mềm",
-        "information system": "hệ thống thông tin",
-        "computer science": "khoa học máy tính",
-        "automotive engineering": "công nghệ kỹ thuật ô tô",
-        "electrical engineering": "công nghệ kỹ thuật điện",
-        "automation": "tự động hóa",
-        "mechanical engineering": "kỹ thuật cơ khí",
-        "civil engineering": "kỹ thuật xây dựng",
-        "transportation": "giao thông vận tải",
-        "logistics": "logistics",
-        "business administration": "quản trị kinh doanh",
-        "marketing": "marketing",
-        "e-commerce": "thương mại điện tử",
-        "human resource": "quản trị nhân lực",
-        "english language": "ngôn ngữ anh"
-    }
-    
-    # Kiểm tra ánh xạ tiếng Anh
-    for eng_name, vn_name in english_mapping.items():
-        if eng_name in nganh_name.lower():
-            # Tìm kiếm lại với tên tiếng Việt
-            for ten_nganh, nganh in nganh_mapping.items():
-                if vn_name in ten_nganh:
-                    return nganh
-    
     return None
-
 class ActionXuLyTen(Action):
     """
     Hành động xử lý tên người dùng
@@ -213,7 +365,6 @@ class ActionXuLyTen(Action):
         name = name.title()
         
         return name
-
 class ActionTraLoiNganhTuyenSinh(Action):
     """
     Hành động trả lời về các ngành tuyển sinh
@@ -554,30 +705,39 @@ class ActionTuVanNganhTheoDiem(Action):
         for nganh in nganh_list:
             if latest_year in nganh["diem_chuan"] and nganh["diem_chuan"][latest_year] is not None:
                 diem_chuan = nganh["diem_chuan"][latest_year]
+                chenh_lech = diem - diem_chuan
                 
-                # Phân loại theo mức độ phù hợp
-                if diem >= diem_chuan + 2:  # Dư điểm nhiều
-                    suitable_nganh.append((nganh["ten_nganh"], diem_chuan, "rất phù hợp"))
-                elif diem >= diem_chuan:  # Đủ điểm
-                    suitable_nganh.append((nganh["ten_nganh"], diem_chuan, "phù hợp"))
-                elif diem >= diem_chuan - 2:  # Thiếu điểm không nhiều
-                    suitable_nganh.append((nganh["ten_nganh"], diem_chuan, "có thể cân nhắc"))
+                # Chỉ xét các ngành có điểm chênh lệch từ -2 trở lên
+                if chenh_lech >= -2:
+                    # Thêm thông tin về khối xét tuyển
+                    khoi_xet_tuyen = nganh["khoi_xet_tuyen"][0] if nganh["khoi_xet_tuyen"] else "N/A"
+                    
+                    suitable_nganh.append({
+                        "ten_nganh": nganh["ten_nganh"],
+                        "ma_khoi": khoi_xet_tuyen,
+                        "diem_dat": diem,
+                        "diem_chuan": diem_chuan,
+                        "chenh_lech": chenh_lech
+                    })
         
-        # Sắp xếp theo mức độ phù hợp
-        suitable_nganh.sort(key=lambda x: (
-            0 if x[2] == "rất phù hợp" else 1 if x[2] == "phù hợp" else 2,
-            x[1]  # Sau đó sắp xếp theo điểm chuẩn để ưu tiên ngành có điểm cao hơn
-        ))
+        # Sắp xếp theo chênh lệch điểm từ cao xuống thấp
+        suitable_nganh.sort(key=lambda x: (-x["chenh_lech"], x["ten_nganh"]))
         
         if suitable_nganh:
-            message = f"Với {diem} điểm, bạn có thể tham khảo các ngành sau:\n\n"
+            message = f"Với tổng điểm {diem:.1f}, dựa vào điểm chuẩn năm 2024, tôi tư vấn cho bạn các ngành sau:\n\n"
             
-            for i, (ten_nganh, diem_chuan, muc_do) in enumerate(suitable_nganh[:10], 1):
-                message += f"{i}. {ten_nganh} (điểm chuẩn: {diem_chuan}) - {muc_do}\n"
+            for i, nganh in enumerate(suitable_nganh[:26], 1):  # Giới hạn 26 ngành
+                message += f"{i}. {nganh['ten_nganh']} - Khối {nganh['ma_khoi']}\n"
                 
-            message += "\nBạn có muốn biết thêm thông tin về ngành nào trong số này không?"
+                # Format theo trạng thái chênh lệch điểm
+                if nganh["chenh_lech"] >= 0:
+                    message += f"   Điểm của bạn: {nganh['diem_dat']:.1f}, Điểm chuẩn: {nganh['diem_chuan']:.1f} (Chênh lệch: +{nganh['chenh_lech']:.1f})\n\n"
+                else:
+                    message += f"   Điểm của bạn: {nganh['diem_dat']:.1f}, Điểm chuẩn: {nganh['diem_chuan']:.1f} (Chênh lệch: {nganh['chenh_lech']:.1f}) - cân nhắc phương thức xét tuyển khác\n\n"
+                
+            message += "Bạn có muốn biết thêm thông tin về ngành nào trong số này không?"
         else:
-            message = f"Với mức điểm {diem}, bạn có thể cân nhắc các ngành có điểm chuẩn thấp hơn hoặc cân nhắc các phương thức xét tuyển khác như xét học bạ hoặc đánh giá năng lực."
+            message = f"Với mức điểm {diem:.1f}, bạn chưa đạt đủ điểm chuẩn các ngành của trường. Bạn có thể cân nhắc các phương thức xét tuyển khác như xét học bạ hoặc đánh giá năng lực."
         
         dispatcher.utter_message(text=message)
         return []
@@ -768,7 +928,7 @@ class ActionTuVanTheoMonVaDiem(Action):
         recommended_nganh.sort(key=lambda x: (-x["chenh_lech"], x["ten_nganh"]))
         
         if recommended_nganh:
-            for i, nganh in enumerate(recommended_nganh[:15], 1):  # Giới hạn 10 ngành
+            for i, nganh in enumerate(recommended_nganh[:26], 1):  # Giới hạn 10 ngành
                 message += f"{i}. {nganh['ten_nganh']} - Khối {nganh['ma_khoi']}\n"
                 message += f"   Điểm của bạn: {nganh['diem_dat']:.1f}, Điểm chuẩn: {nganh['diem_chuan']:.1f} (Chênh lệch: +{nganh['chenh_lech']:.1f})\n\n"
                 
