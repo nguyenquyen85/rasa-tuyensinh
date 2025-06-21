@@ -56,7 +56,10 @@ rules:
     steps:
       - intent: hoi_phuong_thuc_xet_tuyen
       - action: utter_tra_loi_phuong_thuc_xet_tuyen
-
+  - rule: Thông tin về cách đăng ký xét tuyển
+    steps:
+      - intent: hoi_cach_dang_ky_xet_tuyen
+      - action: utter_tra_loi_cach_dang_ky_xet_tuyen
   - rule: Thông tin về cơ sở vật chất
     steps:
       - intent: hoi_co_so_vat_chat
@@ -85,3 +88,7 @@ rules:
     steps:
       - intent: tu_van_theo_mon_va_diem
       - action: action_tu_van_theo_mon_va_diem
+  - rule: Thông tin về môn học trong khối xét tuyển
+    steps:
+      - intent: hoi_khoi_xet_tuyen_mon_hoc
+      - action: action_tra_loi_khoi_xet_tuyen_mon_hoc

@@ -8,6 +8,8 @@ nlu:
     - hi
     - có ai ở đây không
     - bạn ơi
+    - bạn là ai 
+    - chào
 - intent: nhap_ten
   examples: |
     - tôi là [Nguyễn Văn A](ten_nguoi_dung)
@@ -15,18 +17,9 @@ nlu:
     - mình tên là [Tuấn Hưng](ten_nguoi_dung)
     - mình tên [Thảo](ten_nguoi_dung)
     - tôi tên [Nguyễn Tiến](ten_nguoi_dung)
-    - tôi là [Lê Thị Minh Ngọc](ten_nguoi_dung)
-    - tên của tôi là [Phạm Quốc Huy](ten_nguoi_dung)
-    - mình tên [Hoàng Anh Thư](ten_nguoi_dung)
-    - tôi tên là [Trần Văn Nam](ten_nguoi_dung)
-    - tôi là [Đỗ Thị Thanh Tâm](ten_nguoi_dung)
     - tên tôi là [Vũ Minh Đức](ten_nguoi_dung)
     - mình tên là [Nguyễn Thị Mai Linh](ten_nguoi_dung)
     - tôi tên [Bùi Quang Vinh](ten_nguoi_dung)
-    - tôi là [Phan Thị Hồng Nhung](ten_nguoi_dung)
-    - tên của tôi là [Lý Văn Hùng](ten_nguoi_dung)
-    - mình tên [Đặng Thị Kim Chi](ten_nguoi_dung)
-    - tôi tên là [Hồ Văn Long](ten_nguoi_dung)
     - tôi là [Ngô Thị Thu Hà](ten_nguoi_dung)
     - tên tôi là [Mai Văn An](ten_nguoi_dung)
     - mình tên là [Lương Thị Diễm Quỳnh](ten_nguoi_dung)
@@ -245,6 +238,7 @@ nlu:
     - hẹn gặp lại
     - tôi phải đi đây
     - kết thúc cuộc trò chuyện
+
 - intent: hoi_phuong_thuc_xet_tuyen
   examples: |
     - trường có những phương thức xét tuyển nào
@@ -252,7 +246,13 @@ nlu:
     - xét tuyển bằng học bạ được không
     - có xét tuyển thẳng không
     - có cần thi đánh giá năng lực không
-    - cách thức xét tuyển vào UTH
+- intent: hoi_cach_dang_ky_xet_tuyen
+  examples: |
+    - Làm sao để đăng ký học?
+    - Cách xét tuyển như thế nào?
+    - Em cần làm gì để nhập học?
+    - Hướng dẫn đăng ký học ở UTH
+    - Đăng ký xét tuyển ra sao?
 - intent: hoi_co_so_vat_chat
   examples: |
     - cơ sở vật chất trường như thế nào
@@ -321,3 +321,26 @@ nlu:
     - toán 8, sinh 8.5, hóa 7 thì có ngành nào phù hợp?
     - điểm toán của em là 9, văn 7, anh 8, tư vấn giúp em
     - em có điểm như sau: toán 8, lý 7.5, anh 8.5, em nên học ngành gì?
+
+- intent: hoi_khoi_xet_tuyen_mon_hoc
+  examples: |
+    - khối [D07](khoi_xet_tuyen) có những môn nào
+    - khối [A00](khoi_xet_tuyen) gồm môn gì
+    - [A01](khoi_xet_tuyen) bao gồm những môn học nào
+    - cho biết khối [C00](khoi_xet_tuyen) có những môn gì
+    - khối [D01](khoi_xet_tuyen) thi môn nào
+    - [B00](khoi_xet_tuyen) gồm các môn học nào
+    - khối xét tuyển [A02](khoi_xet_tuyen) có môn gì
+    - [C01](khoi_xet_tuyen) bao gồm môn nào
+    - khối [C08](khoi_xet_tuyen) thi những môn gì
+    - cho tôi biết khối [C19](khoi_xet_tuyen) gồm môn nào
+    - [C20](khoi_xet_tuyen) có những môn học nào
+    - khối [D08](khoi_xet_tuyen) bao gồm môn gì
+    - [D90](khoi_xet_tuyen) gồm những môn nào
+    - khối [D96](khoi_xet_tuyen) thi môn gì
+
+- synonym: công nghệ thông tin
+  examples: |
+    - cntt
+    - it
+

@@ -12,12 +12,14 @@ intents:
   - hoi_hoc_phi
   - hoi_dia_diem_hoc
   - hoi_phuong_thuc_xet_tuyen
+  - hoi_cach_dang_ky_xet_tuyen
   - hoi_co_so_vat_chat
   - cam_on
   - tam_biet
   - tu_van_nganh_theo_so_thich
   - tu_van_nganh_theo_diem
   - tu_van_theo_mon_va_diem
+  - hoi_khoi_xet_tuyen_mon_hoc
 
 entities:
   - ten_nguoi_dung
@@ -25,6 +27,7 @@ entities:
   - nam
   - diem
   - mon_hoc
+  - khoi_xet_tuyen
 
 slots:
   ten_nguoi_dung:
@@ -61,6 +64,12 @@ slots:
     mappings:
       - type: from_entity
         entity: mon_hoc
+  khoi_xet_tuyen:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: khoi_xet_tuyen
 
 responses:
   utter_chao_hoi:
@@ -83,7 +92,35 @@ responses:
     - text: "Trường có 3 cơ sở chính:\n- Cơ sở 1: 2 Võ Oanh, Phường 25, Quận Bình Thạnh, TP. Hồ Chí Minh\n-  Cơ sở 2: 10 Đường số 12, Khu phố 3, Phường An Khánh, TP. Thủ Đức, TP. Hồ Chí Minh\nCơ sở 3: 70 Tô Ký, Phường Tân Chánh Hiệp, Quận 12, TP. Hồ Chí Minh."
 
   utter_tra_loi_phuong_thuc_xet_tuyen:
-    - text: "Trường có nhiều phương thức xét tuyển như:\n- Xét tuyển theo điểm thi THPT\n- Xét tuyển học bạ THPT\n- Xét tuyển thẳng (đối với học sinh giỏi, đạt giải olimpic)\n- Xét tuyển kết quả đánh giá năng lực của ĐHQG TP.HCM"
+    - text: "Trường có nhiều phương thức xét tuyển như:\n- Xét tuyển theo điểm thi THPT\n- Xét tuyển học bạ THPT\n- Xét tuyển thẳng (đối với học sinh giỏi, đạt giải olimpic)\n- Xét tuyển kết quả đánh giá năng lực của ĐHQG TP.HCM "
+
+  utter_tra_loi_cach_dang_ky_xet_tuyen:
+    - text: >
+        Bạn có thể đăng ký xét tuyển vào UTH theo 2 cách:
+
+        📌 **Cách 1: Đăng ký trực tuyến**
+        Bước 1: Truy cập trang web tuyển sinh của trường tại: https://tuyensinh.uth.edu.vn  
+        Bước 2: Chọn mục **"Đăng ký xét tuyển trực tuyến"**  
+        Bước 3: Điền đầy đủ thông tin cá nhân, bao gồm:
+        - Họ tên, ngày sinh, số CCCD
+        - Điểm thi hoặc học bạ (tuỳ phương thức xét tuyển)
+        - Ngành học muốn đăng ký (ví dụ: Kinh tế vận tải hàng không)
+        
+        Bước 4: Tải lên các file ảnh hoặc bản scan của các giấy tờ:
+        - Học bạ THPT (hoặc phiếu điểm thi THPT)
+        - Giấy khai sinh, CCCD
+        - Giấy chứng nhận tốt nghiệp tạm thời (nếu có)
+        
+        Bước 5: Bấm nút **Gửi hồ sơ** để hoàn tất
+
+        📌 **Cách 2: Đăng ký trực tiếp tại trường**
+        Bạn có thể đến nộp hồ sơ tại địa chỉ:  
+        **Trường Đại học Giao thông Vận tải TP.HCM (UTH)**  
+        Số 2 Võ Oanh, Phường 25, Quận Bình Thạnh, TP.HCM  
+        Thời gian: Từ 8h00 đến 16h30 các ngày trong tuần (trừ CN)
+
+        Hotline hỗ trợ: **1800 1234**  
+        Hoặc nhắn tin fanpage: https://www.facebook.com/TruongDHGTVTTphcm
 
   utter_tra_loi_co_so_vat_chat:
     - text: "Trường có cơ sở vật chất hiện đại với đầy đủ phòng thí nghiệm, xưởng thực hành, thư viện, ký túc xá. Các phòng học được trang bị máy lạnh và thiết bị giảng dạy hiện đại."
@@ -120,6 +157,7 @@ actions:
   - action_tu_van_nganh_theo_so_thich
   - action_tu_van_nganh_theo_diem
   - action_tu_van_theo_mon_va_diem
+  - action_tra_loi_khoi_xet_tuyen_mon_hoc
 
 session_config:
   session_expiration_time: 60

@@ -204,6 +204,23 @@ stories:
       - action: utter_cam_on
       - intent: tam_biet
       - action: utter_tam_biet
+  - story: Hỏi về cơ sở vật chất và cách đăng ký xét tuyển
+    steps:
+      - intent: chao_hoi
+      - action: utter_chao_hoi
+      - action: utter_hoi_ten
+      - intent: nhap_ten
+        entities:
+          - ten_nguoi_dung: "Thanh Tâm"
+      - action: action_xu_ly_ten
+      - intent: hoi_co_so_vat_chat
+      - action: utter_tra_loi_co_so_vat_chat
+      - intent: hoi_cach_dang_ky_xet_tuyen
+      - action: utter_tra_loi_cach_dang_ky_xet_tuyen
+      - intent: cam_on
+      - action: utter_cam_on
+      - intent: tam_biet
+      - action: utter_tam_biet
 
   - story: Tư vấn ngành theo môn và điểm
     steps:
@@ -223,6 +240,27 @@ stories:
         entities:
           - ten_nganh: "Công nghệ thông tin"
       - action: action_tra_loi_thong_tin_nganh
+      - intent: cam_on
+      - action: utter_cam_on
+      - intent: tam_biet
+      - action: utter_tam_biet
+  - story: Hỏi về môn học trong khối xét tuyển
+    steps:
+      - intent: chao_hoi
+      - action: utter_chao_hoi
+      - action: utter_hoi_ten
+      - intent: nhap_ten
+        entities:
+          - ten_nguoi_dung: "Minh An"
+      - action: action_xu_ly_ten
+      - intent: hoi_khoi_xet_tuyen_mon_hoc
+        entities:
+          - khoi_xet_tuyen: "D07"
+      - action: action_tra_loi_khoi_xet_tuyen_mon_hoc
+      - intent: hoi_khoi_xet_tuyen_mon_hoc
+        entities:
+          - khoi_xet_tuyen: "A00"
+      - action: action_tra_loi_khoi_xet_tuyen_mon_hoc
       - intent: cam_on
       - action: utter_cam_on
       - intent: tam_biet

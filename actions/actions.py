@@ -44,41 +44,62 @@ def find_similar_nganh(nganh_name, nganh_list, threshold=60):
     
     # Ánh xạ từ viết tắt sang tên đầy đủ
     viet_tat_mapping = {
-        # Các từ viết tắt chung
-        "cntt": "công nghệ thông tin",
-        "ktpm": "kỹ thuật phần mềm",
-        "httt": "hệ thống thông tin",
-        "attt": "an toàn thông tin",
-        "ktmt": "kỹ thuật máy tính",
-        "khmt": "khoa học máy tính",
-        "kt": "kỹ thuật",
-        "cn": "công nghệ",
-        "oto": "ô tô",
-        "dc": "động cơ",
-        "dt": "điện tử",
-        "dtvt": "điện tử viễn thông",
-        "tdhvđk": "tự động hóa và điều khiển",
-        "tdh": "tự động hóa",
-        "ck": "cơ khí",
-        "cdt": "cơ điện tử",
-        "ctm": "chế tạo máy",
-        "xd": "xây dựng",
-        "ktxd": "kỹ thuật xây dựng",
-        "cdgt": "công trình giao thông",
-        "gt": "giao thông",
-        "vt": "vận tải",
-        "log": "logistics",
-        "qtkd": "quản trị kinh doanh",
-        "qtdn": "quản trị doanh nghiệp",
-        "mkt": "marketing",
-        "tmdt": "thương mại điện tử",
-        "qtns": "quản trị nhân sự",
-        "qtnl": "quản trị nhân lực",
-        "qldt": "quản lý đô thị",
-        "tckt": "tài chính kế toán",
-        "tc": "tài chính",
-        "kt": "kế toán"
-    }
+    # Công nghệ
+    "cntt": "công nghệ thông tin",
+    "it": "công nghệ thông tin",
+    "cnktck": "công nghệ kỹ thuật cơ khí",
+    "cnktdh": "công nghệ kỹ thuật điều khiển và tự động hóa",
+    "cnktgt": "công nghệ kỹ thuật giao thông",
+    "cnkto": "công nghệ kỹ thuật ô tô",
+    "cnoto": "công nghệ kỹ thuật ô tô",
+    
+    # Hệ thống, khoa học
+    "htttql": "hệ thống thông tin quản lý",
+    "httql": "hệ thống thông tin quản lý",
+    "khdl": "khoa học dữ liệu",
+    "khdlieu": "khoa học dữ liệu",
+    "khhh": "khoa học hàng hải",
+    
+    # Kinh tế
+    "ktvt": "kinh tế vận tải",
+    "ktxd": "kinh tế xây dựng",
+    
+    # Kỹ thuật
+    "ktck": "kỹ thuật cơ khí",
+    "ktđ": "kỹ thuật điện",
+    "ktddt": "kỹ thuật điện, điện tử và điều khiển",
+    "ktđk": "kỹ thuật điều khiển và tự động hóa",
+    "ktmt": "kỹ thuật môi trường",
+    "oto": "kỹ thuật ô tô",
+    "kttt": "kỹ thuật tàu thủy",
+    "ktxd": "kỹ thuật xây dựng",
+    "ktxdctgt": "kỹ thuật xây dựng công trình giao thông",
+
+    # Logistics
+    "logistics": "logistics và quản lý chuỗi cung ứng",
+    "qlccu": "logistics và quản lý chuỗi cung ứng",
+    "log": "logistics và quản lý chuỗi cung ứng",
+    
+    # Luật, mạng, ngôn ngữ
+    "luat": "luật",
+    "mmt": "mạng máy tính và truyền thông dữ liệu",
+    "mmtvttdl": "mạng máy tính và truyền thông dữ liệu",
+    "nnanh": "ngôn ngữ anh",
+    "nna": "ngôn ngữ anh",
+    
+    # Quản lý
+    "qlxd": "quản lý xây dựng",
+
+    # Lỗi chính tả phổ biến
+    "công nghê thông tin": "công nghệ thông tin",
+    "kỹ thuât ô tô": "kỹ thuật ô tô",
+    "kinh tê xây dưng": "kinh tế xây dựng",
+    "luât": "luật",
+    "mang may tinh": "mạng máy tính và truyền thông dữ liệu",
+    "ngon ngu anh": "ngôn ngữ anh",
+    "he thong thong tin": "hệ thống thông tin quản lý"
+}
+
     
     # Xử lý viết tắt: kiểm tra xem nganh_name có phải là viết tắt không
     for viet_tat, ten_day_du in viet_tat_mapping.items():
@@ -757,3 +778,64 @@ class ActionTuVanTheoMonVaDiem(Action):
         
         dispatcher.utter_message(text=message)
         return []
+    
+
+# Thêm vào cuối file actions.py
+
+# Dữ liệu khối xét tuyển và môn học
+KHOI_XET_TUYEN_DATA = {
+    "A00": ["Toán", "Lý", "Hóa"],
+    "A01": ["Toán", "Lý", "Anh"],
+    "A02": ["Toán", "Lý", "Sinh"],
+    "B00": ["Toán", "Hóa", "Sinh"],
+    "C00": ["Văn", "Sử", "Địa"],
+    "C01": ["Toán", "Văn", "Lý"],
+    "C08": ["Toán", "Văn", "Hóa"],
+    "C19": ["Toán", "Văn", "Sử"],
+    "C20": ["Toán", "Văn", "Anh"],
+    "D01": ["Toán", "Văn", "Anh"],
+    "D07": ["Toán", "Hóa", "Anh"],
+    "D08": ["Toán", "Sinh", "Anh"],
+    "D90": ["Toán", "Anh", "KHTN"],
+    "D96": ["Toán", "Anh", "KHXH"]
+}
+
+class ActionTraLoiKhoiXetTuyen(Action):
+    """
+    Hành động trả lời về môn học trong khối xét tuyển
+    """
+    def name(self) -> Text:
+        return "action_tra_loi_khoi_xet_tuyen_mon_hoc"
+        
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        khoi_xet_tuyen = tracker.get_slot("khoi_xet_tuyen")
+        if not khoi_xet_tuyen:
+            dispatcher.utter_message(text="Bạn muốn tìm hiểu về khối xét tuyển nào?")
+            return []
+        
+        # Chuẩn hóa tên khối (viết hoa)
+        khoi_normalized = khoi_xet_tuyen.upper()
+        
+        # Tìm khối trong dữ liệu
+        if khoi_normalized in KHOI_XET_TUYEN_DATA:
+            mon_hoc = KHOI_XET_TUYEN_DATA[khoi_normalized]
+            message = f"Khối {khoi_normalized} bao gồm các môn: {', '.join(mon_hoc)}."
+            dispatcher.utter_message(text=message)
+            return [SlotSet("khoi_xet_tuyen", khoi_normalized)]
+        else:
+            # Tìm kiếm gần đúng
+            khoi_names = list(KHOI_XET_TUYEN_DATA.keys())
+            best_match, score = process.extractOne(khoi_normalized, khoi_names, scorer=fuzz.ratio)
+            
+            if score >= 70:  # Ngưỡng tương đồng
+                mon_hoc = KHOI_XET_TUYEN_DATA[best_match]
+                message = f"Bạn có phải muốn hỏi về khối {best_match} không? Khối {best_match} bao gồm các môn: {', '.join(mon_hoc)}."
+                dispatcher.utter_message(text=message)
+                return [SlotSet("khoi_xet_tuyen", best_match)]
+            else:
+                available_khoi = ", ".join(KHOI_XET_TUYEN_DATA.keys())
+                dispatcher.utter_message(text=f"Tôi không tìm thấy thông tin về khối '{khoi_xet_tuyen}'. Các khối xét tuyển hiện có: {available_khoi}.")
+                return []
